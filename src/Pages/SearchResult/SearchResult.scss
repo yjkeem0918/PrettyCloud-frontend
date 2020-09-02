@@ -1,0 +1,139 @@
+@import "../../Styles/common.scss";
+@import "../../Styles//reset.scss";
+
+.SearchResult {
+  .noticeContainer {
+    width: 1600px;
+    height: 280px;
+    padding-left: 150px;
+    margin-top: 78px;
+    border-bottom: 1px solid #e0e0e0;
+
+    .resultContainer {
+      width: 728px;
+      height: 115px;
+      padding-top: 50px;
+
+      .title {
+        color: #6d3afb;
+        font-size: 28px;
+        border-bottom: 1px solid #6d3afb;
+        font-weight: bold;
+        line-height: 32px;
+        margin-right: 5px;
+      }
+
+      .resultText {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+
+    .selectBarContainer {
+      display: flex;
+      align-items: center;
+
+      .optionContainer {
+        display: flex;
+        width: 980px;
+        margin: 40px 0 90px 0;
+
+        .optionBox {
+          width: 300px;
+          height: 73px;
+          position: relative;
+          margin-right: 20px;
+
+          .option {
+            font-size: 15px;
+          }
+
+          .optionPopContainer {
+            border: 1px solid #ccc;
+            width: 297px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            padding-left: 13px;
+            position: absolute;
+            bottom: 0;
+
+            .optionPop {
+              font-size: 16px;
+            }
+
+            .downArrow {
+              background-size: 684px 663px;
+              background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+              background-position: -396px -232px;
+              width: 15px;
+              height: 9px;
+              margin-left: 190px;
+            }
+
+            .calendarIcon {
+              background-size: 684px 663px;
+              background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+              background-position: -22px -646px;
+              width: 17px;
+              height: 17px;
+              margin-left: 190px;
+            }
+          }
+        }
+      }
+
+      .buttonContainer {
+        width: 240px;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 25px;
+        margin-left: 25px;
+
+        .buttonBox {
+          width: 110px;
+          height: 47px;
+          display: flex;
+          border: 3px solid #6d3afb;
+          border-radius: 44px;
+
+          .locationIcon {
+            background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+            background-size: 684px 663px;
+            background-position: -497px -128px;
+            width: 17px;
+            height: 22px;
+            margin-top: 8px;
+            margin-left: 20px;
+          }
+
+          .filterIcon {
+            background-size: 684px 663px;
+            background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+            background-position: -452px -419px;
+            width: 20px;
+            height: 18px;
+            margin-top: 10px;
+            margin-left: 20px;
+          }
+
+          .button {
+            font-size: 18px;
+            color: #704de4;
+            font-weight: 600;
+            background-color: white;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .categoryList li {
+    font-size: 16px;
+    float: left;
+    padding-right: 30px;
+    color: #656565;
+  }
+}
