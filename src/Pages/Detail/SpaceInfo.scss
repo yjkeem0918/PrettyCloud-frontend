@@ -1,0 +1,30 @@
+.SpaceInfo {
+  .introTextBox {
+    padding-top: 50px;
+    margin-bottom: 50px;
+    .introHeader {
+      margin: 70px 0 28px;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+    .pIntro {
+      font-size: 16px;
+      line-height: 28px;
+      color: #656565;
+    }
+    .introOfficeHours {
+      margin-top: 35px;
+      .officeHours {
+        padding: 10px 0 8px 0px;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebeb;
+        .hours {
+          color: #656565;
+          line-height: 28px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.Reservation {
+  .reservationBox {
+    border-top: 1px solid #f6f6f6;
+    margin-bottom: 50px;
+    .reservationHeader {
+      position: relative;
+      margin: 70px 0 28px;
+      color: #000;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+    ol {
+      .reservationList {
+        padding: 8px;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebeb;
+        .num {
+          font-weight: 600;
+        }
+        .desc {
+          color: #656565;
+          line-height: 28px;
+          padding-left: 29px;
+        }
+      }
+    }
+  }
+}
