@@ -2,64 +2,60 @@
 @import "../../Styles//reset.scss";
 
 .SearchResult {
+  margin-top: 78px;
+
   .noticeContainer {
-    width: 1600px;
-    height: 280px;
-    padding-left: 150px;
-    margin-top: 78px;
     border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 30px;
+    width: 1250px;
+    margin: 0 auto;
 
-    .resultContainer {
-      width: 728px;
-      height: 115px;
-      padding-top: 50px;
+    .title {
+      color: #6d3afb;
+      font-size: 28px;
+      border-bottom: 1px solid #6d3afb;
+      font-weight: bold;
+      line-height: 32px;
+      margin-right: 5px;
+    }
 
-      .title {
-        color: #6d3afb;
-        font-size: 28px;
-        border-bottom: 1px solid #6d3afb;
-        font-weight: bold;
-        line-height: 32px;
-        margin-right: 5px;
-      }
-
-      .resultText {
-        font-size: 28px;
-        line-height: 32px;
-      }
+    .resultText {
+      font-size: 28px;
+      line-height: 32px;
     }
 
     .selectBarContainer {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
+      margin-top: 50px;
 
       .optionContainer {
         display: flex;
-        width: 980px;
-        margin: 40px 0 90px 0;
+        justify-content: space-between;
+        margin-right: 60px;
 
         .optionBox {
-          width: 300px;
-          height: 73px;
-          position: relative;
           margin-right: 20px;
+          height: 70px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
 
-          .option {
+          .optionType {
             font-size: 15px;
           }
 
-          .optionPopContainer {
+          .optionWrapper {
             border: 1px solid #ccc;
             width: 297px;
             height: 46px;
             display: flex;
             align-items: center;
-            padding-left: 13px;
-            position: absolute;
-            bottom: 0;
+            justify-content: space-between;
 
-            .optionPop {
+            .option {
               font-size: 16px;
+              margin-left: 13px;
             }
 
             .downArrow {
@@ -68,7 +64,7 @@
               background-position: -396px -232px;
               width: 15px;
               height: 9px;
-              margin-left: 190px;
+              margin-right: 8px;
             }
 
             .calendarIcon {
@@ -77,7 +73,7 @@
               background-position: -22px -646px;
               width: 17px;
               height: 17px;
-              margin-left: 190px;
+              margin-right: 8px;
             }
           }
         }
@@ -88,14 +84,12 @@
         height: 50px;
         display: flex;
         justify-content: space-around;
-        margin-bottom: 25px;
-        margin-left: 25px;
 
         .buttonBox {
           width: 110px;
           height: 47px;
           display: flex;
-          border: 3px solid #6d3afb;
+          border: 1px solid #6d3afb;
           border-radius: 44px;
 
           .locationIcon {
@@ -104,8 +98,7 @@
             background-position: -497px -128px;
             width: 17px;
             height: 22px;
-            margin-top: 8px;
-            margin-left: 20px;
+            margin: 10px 5px 0 20px;
           }
 
           .filterIcon {
@@ -114,8 +107,7 @@
             background-position: -452px -419px;
             width: 20px;
             height: 18px;
-            margin-top: 10px;
-            margin-left: 20px;
+            margin: 12px 5px 0 20px;
           }
 
           .button {
@@ -123,17 +115,65 @@
             color: #704de4;
             font-weight: 600;
             background-color: white;
-            padding-left: 10px;
           }
         }
       }
     }
   }
 
-  .categoryList li {
-    font-size: 16px;
-    float: left;
-    padding-right: 30px;
-    color: #656565;
+  .categoryBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 58px 0 15px 0;
+    border-bottom: 2px solid #b2b2b2;
+    width: 1250px;
+    margin: 0 auto;
+
+    .categoryBox {
+      display: flex;
+      align-items: center;
+
+      .categoryList {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 20px;
+        width: 300px;
+
+        li {
+          font-size: 16px;
+          color: #656565;
+        }
+
+        .categoryBar {
+          border-right: 1px solid #ccc;
+          height: 12px;
+        }
+      }
+    }
+
+    .discountSpace {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    .newTag {
+      width: 43.73px;
+      height: 17.97px;
+      color: white;
+      margin-left: 5px;
+      padding: 1.5px 6px;
+      font-size: 14px;
+      font-weight: 400;
+      background: #ec4d3d;
+    }
+
+    select {
+      width: 152px;
+      height: 40px;
+      background-color: #ffffff;
+      outline: none;
+      border-color: #e0e0e0;
+    }
   }
 }
