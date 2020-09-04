@@ -6,9 +6,12 @@
 
   .noticeContainer {
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 30px;
-    width: 1250px;
-    margin: 0 auto;
+    padding-bottom: 40px;
+
+    .noticeBox {
+      width: 1250px;
+      margin: 0 auto;
+    }
 
     .title {
       color: #6d3afb;
@@ -25,14 +28,12 @@
     }
 
     .selectBarContainer {
-      display: flex;
-      align-items: flex-end;
       margin-top: 50px;
 
       .optionContainer {
         display: flex;
         justify-content: space-between;
-        margin-right: 60px;
+        align-items: flex-end;
 
         .optionBox {
           margin-right: 20px;

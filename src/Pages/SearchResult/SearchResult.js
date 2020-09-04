@@ -31,61 +31,66 @@ class SearchResult extends Component {
     return (
       <div className="SearchResult">
         <div className="noticeContainer">
-          <span className="title">루프탑</span>
-          <span className="resultText">(으)로 검색한 결과입니다.</span>
-          <div className="selectBarContainer">
-            <div className="optionContainer">
-              {OPTIONS.map((el) => {
-                return (
-                  <div className="optionBox" key={el.id}>
-                    <span className="optionType">{el.type}</span>
-                    <div className="optionWrapper">
-                      <span className="option">{el.option}</span>
-                      <div className={el.icon} />
-                    </div>
-                  </div>
-                );
-              })}
-              <div className="buttonContainer">
-                {BUTTON.map((el) => {
+          <div className="noticeBox">
+            <span className="title">루프탑</span>
+            <span className="resultText">(으)로 검색한 결과입니다.</span>
+
+            <div className="selectBarContainer">
+              <div className="optionContainer">
+                {OPTIONS.map((el) => {
                   return (
-                    <div className="buttonBox" key={el.id}>
-                      <div className={el.icon} />
-                      <button className="button">{el.name}</button>
+                    <div className="optionBox" key={el.id}>
+                      <span className="optionType">{el.type}</span>
+                      <div className="optionWrapper">
+                        <span className="option">{el.option}</span>
+                        <div className={el.icon} />
+                      </div>
                     </div>
                   );
                 })}
+                <div className="buttonContainer">
+                  {BUTTON.map((el) => {
+                    return (
+                      <div className="buttonBox" key={el.id}>
+                        <div className={el.icon} />
+                        <button className="button">{el.name}</button>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-          <div className="categoryBarContainer">
-            <div className="categoryBox">
-              <ul className="categoryList">
-                {CATEGORY.map((el) => {
-                  return (
-                    <>
-                      <li>{el.list}</li>
-                      <div className={el.bar ? "categoryBar" : ""} />
-                    </>
-                  );
-                })}
-              </ul>
-              <div className="checkBoxContainer">
-                <input className="checkingDiscount" type="checkbox" />
-                <span className="discountSpace">지금 쿠폰 할인되는 공간</span>
-                <span className="newTag">NEW</span>
-              </div>
-            </div>
-            <select>
-              {SELECT.map((el) => {
+        </div>
+        <div className="categoryBarContainer">
+          <div className="categoryBox">
+            <ul className="categoryList">
+              {CATEGORY.map((el) => {
                 return (
                   <>
-                    <option value={el.value}>{el.order}</option>
+                    <li>{el.list}</li>
+                    <div className={el.bar ? "categoryBar" : ""} />
                   </>
                 );
               })}
-            </select>
+            </ul>
+
+            <div className="checkBoxContainer">
+              <input className="checkingDiscount" type="checkbox" />
+              <span className="discountSpace">지금 쿠폰 할인되는 공간</span>
+              <span className="newTag">NEW</span>
+            </div>
           </div>
+
+          <select>
+            {SELECT.map((el) => {
+              return (
+                <>
+                  <option value={el.value}>{el.order}</option>
+                </>
+              );
+            })}
+          </select>
         </div>
       </div>
     );
