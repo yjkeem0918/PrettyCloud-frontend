@@ -1,0 +1,53 @@
+@import "../../Styles/common.scss";
+
+.Main {
+  font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
+    Helvetica, Apple SD Gothic Neo, Sans-serif !important;
+
+  .searchSpace {
+    background: #f6f6f6;
+    text-align: center;
+    margin: auto;
+    width: 1158px;
+    padding-top: 62px;
+    padding-bottom: 30px;
+
+    .mainSubTitle {
+      font-size: 34px;
+      font-weight: bold;
+    }
+    .spaceList {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .recommendSpace {
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    padding-top: 62px;
+    padding-bottom: 30px;
+    .mainSubTitle {
+      font-size: 34px;
+      font-weight: bold;
+    }
+  }
+  .userReview {
+    background: #fff;
+    padding-top: 62px;
+    padding-bottom: 60px;
+    text-align: center;
+
+    .mainSubTitle {
+      font-size: 34px;
+      font-weight: bold;
+    }
+    .titleContent {
+      margin-top: 10px;
+    }
+  }
+}
