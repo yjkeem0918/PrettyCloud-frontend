@@ -30,7 +30,7 @@ class SpaceInfo extends Component {
             </li>
             <li className="officeHours">
               <span className="open">휴무일</span>
-              <span className="hours">없음</span>
+              <span className="hours">&nbsp;&nbsp;&nbsp;없음</span>
             </li>
           </ul>
         </div>

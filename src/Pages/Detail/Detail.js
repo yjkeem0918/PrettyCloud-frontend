@@ -26,6 +26,10 @@ class Detail extends Component {
             <div className="rightDetailSpaceBox">
               <div className="rightDetailHeaderBox">
                 <h3 className="rightDetailHeader">세부공간 선택</h3>
+                <div className="iconContainer">
+                  <img src="images/share.png" alt="shareicon" />
+                  <img src="images/heart.png" alt="hearticon" />
+                </div>
               </div>
               <div className="spaceBox">
                 <div className="respondInfos">
@@ -92,9 +96,13 @@ class Detail extends Component {
                 </div>
               </div>
             </div>
-            <div className="mainPhoto"></div>
-            <div className="textBox">
-              <h3 className="textBoxHeader">자연광 화이트톤 카페 & 스튜디오</h3>
+            <div className="photoWrapper">
+              <div className="mainPhoto"></div>
+              <div className="textBox">
+                <h3 className="textBoxHeader">
+                  자연광 화이트톤 카페 & 스튜디오
+                </h3>
+              </div>
             </div>
             <ul className="navWrapper">
               <li className="navButton">

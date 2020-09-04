@@ -1,0 +1,68 @@
+.ReviewComment {
+  padding: 24px 0 0;
+  .userCommentBox {
+    position: relative;
+    border-bottom: 1px solid #ebebeb;
+    .profileImg {
+      background-image: url(https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg);
+      width: 80px;
+      height: 80px;
+      border-radius: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: 50%;
+    }
+    .commentBox {
+      margin-left: 110px;
+      .guestName {
+        display: inline-block;
+        margin-top: 3px;
+        font-size: 18px;
+        line-height: 21px;
+      }
+      .starIconbox {
+        width: 115px;
+        height: 16px;
+        position: absolute;
+        top: 4px;
+        right: 0px;
+        background-size: 684px 663px;
+        background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+        background-position: -454px -624px;
+        width: 18px;
+        height: 16px;
+      }
+      .userComment {
+        margin-top: 11px;
+        line-height: 28px;
+        color: #656565;
+        font-size: 16px;
+      }
+      .timeInfo {
+        margin: 13px 0 17px;
+        font-size: 12px;
+        color: #b2b2b2;
+      }
+    }
+    .hostCommentBox {
+      margin-left: 110px;
+      .host {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #6d3afb;
+      }
+      .hostComment {
+        margin-top: 11px;
+        line-height: 28px;
+        color: #656565;
+      }
+      .timeInfo {
+        margin: 13px 0 17px;
+        font-size: 12px;
+        color: #b2b2b2;
+      }
+    }
+  }
+}

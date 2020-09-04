@@ -3,10 +3,21 @@
     padding-top: 50px;
     margin-bottom: 50px;
     .introHeader {
+      position: relative;
+      padding-bottom: 16px;
       margin: 70px 0 28px;
       font-size: 18px;
       line-height: 30px;
       font-weight: 700;
+    }
+    .introHeader::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      height: 4px;
+      width: 20px;
+      background-color: #ffd014;
     }
     .pIntro {
       font-size: 16px;
