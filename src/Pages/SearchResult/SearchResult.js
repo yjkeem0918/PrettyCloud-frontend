@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchResult.scss";
+import SpaceCard from "./SpaceCard";
 
 const OPTIONS = [
   { id: "1", type: "공간 유형", option: "모든 공간", icon: "downArrow" },
@@ -92,6 +93,7 @@ class SearchResult extends Component {
             })}
           </select>
         </div>
+        <SpaceCard />
       </div>
     );
   }
