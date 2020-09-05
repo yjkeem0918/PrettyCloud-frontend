@@ -62,6 +62,7 @@ class Footer extends Component {
 }
 const FooterContainer = styled.footer`
   position: absolute;
+  /* z-index: -1; */
   bottom: 0;
   width: 100%;
   padding: 54px 0 50px;

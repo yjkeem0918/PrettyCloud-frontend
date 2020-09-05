@@ -2,33 +2,41 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-class Login extends Component {
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      close: props.close,
+    };
+  }
   render() {
     return (
-      <NavContainer>
-        <div>
-          <NavLogoBox>
-            <div></div>
-          </NavLogoBox>
-          <SearchBox>
-            <Search placeholder="지역 또는 공간유형을 검색해보세요!"></Search>
-            <SearchWrap href="#">
+      <>
+        <NavContainer>
+          <div>
+            <NavLogoBox>
               <div></div>
-            </SearchWrap>
-          </SearchBox>
-        </div>
-        <NavLinkContainer>
-          <Link>
-            <a>기획전</a>
-          </Link>
-          <Link>
-            <a>공간 등록하기</a>
-          </Link>
-          <NavLinkIcon>
-            <div></div>
-          </NavLinkIcon>
-        </NavLinkContainer>
-      </NavContainer>
+            </NavLogoBox>
+            <SearchBox>
+              <Search placeholder="지역 또는 공간유형을 검색해보세요!"></Search>
+              <SearchWrap href="#">
+                <div></div>
+              </SearchWrap>
+            </SearchBox>
+          </div>
+          <NavLinkContainer>
+            <Link>
+              <a>기획전</a>
+            </Link>
+            <Link>
+              <a>공간 등록하기</a>
+            </Link>
+            <NavLinkIcon onClick={this.props.openAside}>
+              <div></div>
+            </NavLinkIcon>
+          </NavLinkContainer>
+        </NavContainer>
+      </>
     );
   }
 }
@@ -116,4 +124,4 @@ const NavLinkIcon = styled.a`
   }
 `;
 
-export default Login;
+export default Nav;

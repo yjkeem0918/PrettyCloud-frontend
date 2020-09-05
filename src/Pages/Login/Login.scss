@@ -1,1 +1,307 @@
- 
+@import "../../Styles/common.scss";
+
+.AsideNav {
+  .closeAside {
+    position: relative;
+    transform: translateX(400px);
+    transition: all 0.5s ease;
+    z-index: 10;
+    aside {
+      position: fixed;
+      right: 0;
+      width: 400px;
+      height: 100vh;
+      background-color: #f6f6f6;
+      .profileBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px;
+        height: 170px;
+        background-color: rgba(255, 208, 20, 0.85);
+        .profileLogo {
+          img {
+            border-radius: 50%;
+          }
+        }
+        .profileName {
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .navClose {
+          div {
+            background-size: 684px 663px;
+            background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+            background-position: -637px -510px;
+            width: 24px;
+            height: 26px;
+          }
+        }
+      }
+      .menuBox {
+        display: flex;
+        height: 108px;
+        background: #fff;
+        li {
+          width: 33.3%;
+          height: 100%;
+          border: 1px solid #ebebeb;
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .IconWrapper {
+              @include center;
+              width: 65px;
+              height: 65px;
+              div {
+                background-size: 684px 663px;
+                background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+                width: 34px;
+                height: 34px;
+              }
+              .reservationList {
+                background-position: -599px -266px;
+              }
+              .userReview {
+                background-position: -304px -548px;
+              }
+              .likey {
+                width: 33.98px;
+                height: 33.98px;
+                background: no-repeat 50%
+                  url("https://www.spacecloud.kr/_nuxt/img/c36dddb.svg");
+                background-size: 100% 100%;
+              }
+            }
+            span {
+              color: #656565;
+              font-size: 14px;
+              line-height: 18px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .event {
+        width: 100%;
+        height: 60px;
+        padding-left: 20px;
+        background-color: #704de4;
+        color: #fff;
+        font-size: 17px;
+        text-align: left;
+      }
+      .menuList {
+        margin-top: 15px;
+        li {
+          width: 100%;
+          height: 60px;
+          border-top: 1px solid #ebebeb;
+          background: #fff;
+          a {
+            display: flex;
+            justify-content: space-between;
+            padding: 21px 25px 20px;
+            .homelistName {
+              font-size: 18px;
+            }
+            .listIcon {
+              background-size: 684px 663px;
+              background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+              background-position: -672px -275px;
+              width: 10px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+      .serviceBox {
+        padding: 39px 0;
+        text-align: center;
+        color: #949494;
+        a {
+          color: #949494;
+        }
+        div {
+          margin-top: 17px;
+        }
+      }
+      .bottomButton {
+        @include center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: #6d3afb;
+        color: #ffd014;
+        font-size: 18px;
+        span {
+          margin-left: 20px;
+          display: block;
+          background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+          background-size: 684px 663px;
+          background-position: -336px -586px;
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+    
+  .showAside {
+    transition: all 0.5s ease;
+    position: relative;
+    display: block;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    aside {
+      transition: all 0.5s ease;
+      position: fixed;
+      z-index: 10;
+      right: 0;
+      width: 400px;
+      height: 100vh;
+      background-color: #f6f6f6;
+      .profileBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px;
+        height: 170px;
+        background-color: rgba(255, 208, 20, 0.85);
+        .profileLogo {
+          img {
+            border-radius: 50%;
+          }
+        }
+        .profileName {
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .navClose {
+          div {
+            background-size: 684px 663px;
+            background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+            background-position: -637px -510px;
+            width: 24px;
+            height: 26px;
+          }
+        }
+      }
+      .menuBox {
+        display: flex;
+        height: 108px;
+        background: #fff;
+        li {
+          width: 33.3%;
+          height: 100%;
+          border: 1px solid #ebebeb;
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .IconWrapper {
+              @include center;
+              width: 65px;
+              height: 65px;
+              div {
+                background-size: 684px 663px;
+                background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+                width: 34px;
+                height: 34px;
+              }
+              .reservationList {
+                background-position: -599px -266px;
+              }
+              .userReview {
+                background-position: -304px -548px;
+              }
+              .likey {
+                width: 33.98px;
+                height: 33.98px;
+                background: no-repeat 50%
+                  url("https://www.spacecloud.kr/_nuxt/img/c36dddb.svg");
+                background-size: 100% 100%;
+              }
+            }
+            span {
+              color: #656565;
+              font-size: 14px;
+              line-height: 18px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .event {
+        width: 100%;
+        height: 60px;
+        padding-left: 20px;
+        background-color: #704de4;
+        color: #fff;
+        font-size: 17px;
+        text-align: left;
+      }
+      .menuList {
+        margin-top: 15px;
+        li {
+          width: 100%;
+          height: 60px;
+          border-top: 1px solid #ebebeb;
+          background: #fff;
+          a {
+            display: flex;
+            justify-content: space-between;
+            padding: 21px 25px 20px;
+            .homelistName {
+              font-size: 18px;
+            }
+            .listIcon {
+              background-size: 684px 663px;
+              background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+              background-position: -672px -275px;
+              width: 10px;
+              height: 16px;
+            }
+          }
+        }
+      }
+      .serviceBox {
+        padding: 39px 0;
+        text-align: center;
+        color: #949494;
+        a {
+          color: #949494;
+        }
+        div {
+          margin-top: 17px;
+        }
+      }
+      .bottomButton {
+        @include center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: #6d3afb;
+        color: #ffd014;
+        font-size: 18px;
+        span {
+          margin-left: 20px;
+          display: block;
+          background-image: url("https://www.spacecloud.kr/_nuxt/img/08341ee.png");
+          background-size: 684px 663px;
+          background-position: -336px -586px;
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
