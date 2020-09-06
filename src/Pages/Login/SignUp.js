@@ -29,8 +29,8 @@ class SignUp extends Component {
       })
     }
   }
-  
 
+  
   // hiddenAlert = () => {
   //  if(this.state.name.length > 2){
   //    this.setState({
