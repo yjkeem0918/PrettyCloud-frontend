@@ -40,7 +40,7 @@
             background-size: auto 100%;
           }
         }
-        .kakao{
+        .kakao {
           margin-top: 16px;
           &::before {
             background-position: 100% 0;
@@ -74,6 +74,17 @@
           outline: none;
           border: 1px solid #e0e0e0;
           font-size: 16px;
+          &:focus {
+            border: 1px solid #ff3a48;
+          }
+        }
+        .alert {
+          padding-top: 6px;
+          color: #ff3a48;
+          font-size: 14px;
+        }
+        .hiddenAlert {
+          display: none;
         }
         .password {
           margin-top: 16px;
@@ -120,6 +131,7 @@
           height: 48px;
           margin-top: 24px;
           background: #ffd014;
+          cursor: pointer;
         }
         p {
           margin-top: 15px;

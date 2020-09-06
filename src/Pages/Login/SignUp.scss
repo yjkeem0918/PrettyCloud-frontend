@@ -97,7 +97,7 @@
             border: 1px solid  #ff3a48;
           }
         }
-        .alertName{
+        .alert{
           padding-top: 6px;
           color: #ff3a48;
           font-size: 14px;
@@ -106,10 +106,6 @@
           display: none
         }
 
-
-
-
-        
         .checkBox {
           margin-top: 30px;
           .allAgree {
@@ -172,6 +168,7 @@
           height: 48px;
           margin-top: 24px;
           background: #ffd014;
+          cursor: pointer;
         }
       }
     }
