@@ -5,6 +5,11 @@ export default class UserReview extends Component {
     super();
     this.state = {
       userReview: [],
+      reviewTag: ["회의실", "세미나실", "다목적홀"],
+      reviewName: "일산 더리츠 파티룸",
+      contentPrice: "89,000 원/패키지",
+      contents:
+        "되게 넓고 앤틱한 분위기가 너무 예쁜 곳이였어요! 보드게임이랑 소품이랑 조명이랑 다 있어서 사진도 많이 찍고 잘 놀다가요! :)",
     };
   }
 

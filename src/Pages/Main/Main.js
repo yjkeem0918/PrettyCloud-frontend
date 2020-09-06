@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SlidePanel from "./Components/SlidePanel";
-import SearchSpaceList from "./Components/SearchSpaceList";
 import RecommendSpace from "./Components/RecommendSpace";
+import SearchCard from "../SearchResult/SpaceCard";
 import UserReview from "./Components/UserReview";
 import "./Main.scss";
 
@@ -22,6 +22,12 @@ export default class Main extends Component {
         "카페",
         "레저시설",
         "독립오피스",
+        "다목적홀",
+        "공연장",
+        "코워킹스페이스",
+        "작업실",
+        "한옥",
+        "할인",
       ],
       reviewTag: ["회의실", "세미나실", "다목적홀"],
       reviewName: "일산 더리츠 파티룸",
@@ -40,17 +46,19 @@ export default class Main extends Component {
 
         <section className="searchSpace">
           <p className="mainSubTitle">어떤 공간을 찾고 있나요?</p>
-          <ul className="spaceList">
-            {this.state.spaceList.map((el) => {
-              return <SearchSpaceList spaceListFromMain={el} />;
-            })}
-          </ul>
+          <div className="spaceListBox">
+            <ul className="spaceList">
+              {this.state.spaceList.map((el) => {
+                return <li className="listContents">{el}</li>;
+              })}
+            </ul>
+          </div>
         </section>
 
         <section className="recommendSpace">
           <p className="mainSubTitle">오늘의 추천공간</p>
-          <div className="contentSlider">
-            <RecommendSpace />
+          <div className="recommendSlide">
+            <SearchCard />
           </div>
         </section>
         <section className="userReview">
