@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SpaceInfo from "./SpaceInfo";
+import DetailNav from "./DetailNav";
 import Facility from "./Facility";
 import Reservation from "./Reservation";
 import Refund from "./Refund";
@@ -104,23 +105,7 @@ class Detail extends Component {
                 </h3>
               </div>
             </div>
-            <ul className="navWrapper">
-              <li className="navButton">
-                <a href="#">공간소개</a>
-              </li>
-              <li className="navButton">
-                <a href="#">시설안내</a>
-              </li>
-              <li className="navButton">
-                <a href="#">유의사항</a>
-              </li>
-              <li className="navButton">
-                <a href="#">환불정책</a>
-              </li>
-              <li className="navButton">
-                <a href="#">이용후기</a>
-              </li>
-            </ul>
+            <DetailNav />
             <SpaceInfo />
             <Facility />
             <Reservation />
