@@ -1,0 +1,163 @@
+.SpaceCard {
+  width: 377px;
+  height: 339.25px;
+  position: relative;
+
+  .imageContainer {
+    z-index: 1;
+
+    img {
+      width: 377px;
+      height: 339.25px;
+    }
+  }
+
+  .infoContainer {
+    width: 377px;
+    padding: 17px;
+    position: absolute;
+    z-index: 2;
+    top: 245px;
+    background-color: white;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+
+    .name {
+      width: 100%;
+      text-align: center;
+      font-size: 21px;
+      padding-bottom: 3px;
+      font-weight: bold;
+    }
+
+    .locationBox {
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+
+      .locationWrapper {
+        width: 60px;
+        height: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .icon {
+          background-image: url("/images/all_icon.png");
+          width: 8.98px;
+          height: 11.99px;
+          background-position: -672px -421px;
+        }
+
+        .location {
+          font-size: 12px;
+          color: #656565;
+          font-weight: bold;
+        }
+
+        .bar {
+          border-right: 1px solid #cccccc;
+          height: 12px;
+        }
+      }
+
+      .tagWrapper {
+        height: 17px;
+        padding-left: 8px;
+
+        span {
+          font-size: 12px;
+          color: #656566;
+          padding-right: 5px;
+        }
+      }
+    }
+
+    .priceNumberBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+
+      .priceWrapper {
+        display: flex;
+        align-items: center;
+
+        .price {
+          font-size: 20px;
+          color: #6d3afb;
+          font-weight: bold;
+        }
+
+        .unit {
+          font-size: 12px;
+          color: #665566;
+          padding-left: 3px;
+        }
+      }
+
+      .numberWrapper {
+        display: flex;
+        align-items: center;
+
+        .maxUserBox {
+          display: flex;
+          align-items: center;
+          margin-right: 6px;
+
+          .userIcon {
+            background-size: 100%;
+            background-image: url("/images/max_user.png");
+            width: 13px;
+            height: 12px;
+          }
+
+          .maxUser {
+            font-size: 12px;
+            color: #656565;
+            padding-left: 3px;
+          }
+        }
+
+        .replyBox {
+          display: flex;
+          align-items: center;
+          margin-right: 6px;
+
+          .replyIcon {
+            background-position: -459px -646px;
+            width: 13px;
+            height: 12px;
+            background-size: 684px 663px;
+            background-image: url("/images/all_icon.png");
+          }
+          .reply {
+            font-size: 12px;
+            color: #656565;
+            padding-left: 3px;
+          }
+        }
+
+        .likesBox {
+          display: flex;
+          align-items: center;
+          margin-right: 6px;
+
+          .likesIcon {
+            background-position: -476px -646px;
+            width: 13px;
+            height: 12px;
+            background-image: url("/images/all_icon.png");
+            background-size: 684px 663px;
+          }
+          .likes {
+            font-size: 12px;
+            color: #656565;
+            padding-left: 3px;
+          }
+        }
+      }
+    }
+  }
+}
