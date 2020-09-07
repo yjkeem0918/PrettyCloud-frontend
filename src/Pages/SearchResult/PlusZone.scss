@@ -10,5 +10,7 @@
 
   .plusContainer {
     display: flex;
+    flex-wrap: wrap;
+    width: 1250px;
   }
 }

@@ -11,8 +11,8 @@ class PremiumZone extends Component {
           <SpaceCard />
           <SpaceCard />
           <SpaceCard />
-        </div>
-        <div className="premiumContainer">
+          <SpaceCard />
+          <SpaceCard />
           <SpaceCard />
           <SpaceCard />
           <SpaceCard />
