@@ -1,6 +1,15 @@
 import React, { Component } from "react";
-import "./AsideNav.scss";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
+import "./AsideNav.scss";
+
+const LIST = [
+  "스페이스 클라우드 홈",
+  "공지사항",
+  "도움말",
+  "1:1문의",
+  "서비스 정보",
+];
 
 class AsideNav extends Component {
   constructor() {
@@ -12,30 +21,22 @@ class AsideNav extends Component {
 
   openAside = () => {
     this.setState({
-      close: !this.state.close,
+      close: true,
+      bg: true,
     });
   };
 
-  closeNav = () => {
+  closeAside = () => {
     this.setState({
-      close: !this.state.close,
-    });
-  };
-
-  hiddenAside = () => {
-    this.setState({
-      close: !this.state.close,
+      close: false,
     });
   };
 
   render() {
     return (
       <div className="AsideNav">
-        <Nav openAside={this.openAside} />
-        <div
-          className={this.state.close ? "showAside" : "closeAside"}
-          onClick={this.hiddenAside}
-        >
+        <Nav open={this.openAside} />
+        <div className={this.state.close ? "showAside" : "hiddenAside"}>
           <aside>
             <div className="profileBox">
               <a href="#" className="profileLogo">
@@ -44,10 +45,12 @@ class AsideNav extends Component {
                   src="https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg"
                 />
               </a>
-              <a href="#" className="profileName">
-                로그인이 필요합니다.
-              </a>
-              <a onClick={this.closeNav} href="#" className="navClose">
+              <Link to="/login">
+                <a href="#" className="profileName">
+                  로그인이 필요합니다.
+                </a>
+              </Link>
+              <a href="#" className="navClose" onClick={this.closeAside}>
                 <div></div>
               </a>
             </div>
@@ -66,7 +69,6 @@ class AsideNav extends Component {
                     <div className="userReview"></div>
                   </div>
                   <span>이용 후기</span>
-                  {/* <div>Q&A 관리</div> */}
                 </a>
               </li>
               <li>
@@ -80,39 +82,21 @@ class AsideNav extends Component {
             </ul>
             <button className="event">이 달의 기획전</button>
             <ul className="menuList">
-              <li>
-                <a>
-                  <div className="homelistName">스페이스 클라우드 홈</div>
-                  <div className="listIcon"></div>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <div className="homelistName">공지사항</div>
-                  <div className="listIcon"></div>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <div className="homelistName">도움말</div>
-                  <div className="listIcon"></div>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <div className="homelistName">1:1문의</div>
-                  <div className="listIcon"></div>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <div className="homelistName">서비스 정보</div>
-                  <div className="listIcon"></div>
-                </a>
-              </li>
+              {LIST.map((el, idx) => {
+                return (
+                  <li key={idx}>
+                    <a>
+                      <div>{el}</div>
+                      <div className="listIcon"></div>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
             <div className="serviceBox">
-              <a href="#">로그인</a>
+              <Link to="/login">
+                <a href="#">로그인</a>
+              </Link>
               <div>Powered by © NSPACE Corp.</div>
             </div>
             <a href="#" className="bottomButton">

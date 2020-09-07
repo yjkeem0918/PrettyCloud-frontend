@@ -1,42 +1,43 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+const INFO = [
+  "블로그",
+  "이용약관",
+  "개인정보처리방침",
+  "운영정책",
+  "고객 문의",
+];
+const LIST = [
+  "상호명: 주식회사 앤스페이지",
+  "대표: 정수현",
+  "사업자등록번호: 230-81-0311",
+  "통신판매업신고번호: 2018-서울강남-04590",
+  "사업자등록정보 > ",
+  "영업소재지: 서울특별시 강남구 삼성로 414",
+  "이메일: office@spacecloud.kr",
+  "대표전화: 1599-4312(평일 오후 2시 ~ 오후 6시)",
+  "온라인 1:1문의 바로가기(평일 오전 10시 ~ 오후6시)",
+  "*공간에 대한 문의사항은 해당 공간 호스트에서 직접 문의해주세요.",
+];
+
 class Footer extends Component {
   render() {
-    const info = [
-      "블로그",
-      "이용약관",
-      "개인정보처리방침",
-      "운영정책",
-      "고객 문의",
-    ];
-    const list = [
-      "상호명: 주식회사 앤스페이지",
-      "대표: 정수현",
-      "사업자등록번호: 230-81-0311",
-      "통신판매업신고번호: 2018-서울강남-04590",
-      "사업자등록정보 > ",
-      "영업소재지: 서울특별시 강남구 삼성로 414",
-      "이메일: office@spacecloud.kr",
-      "대표전화: 1599-4312(평일 오후 2시 ~ 오후 6시)",
-      "온라인 1:1문의 바로가기(평일 오전 10시 ~ 오후6시)",
-      "*공간에 대한 문의사항은 해당 공간 호스트에서 직접 문의해주세요.",
-    ];
     return (
       <FooterContainer>
         <FooterBox>
           <Top>
             <Logo></Logo>
             <TopInfoBox>
-              {info.map((el) => {
-                return <li>{el}</li>;
+              {INFO.map((el, idx) => {
+                return <li key={idx}>{el}</li>;
               })}
             </TopInfoBox>
           </Top>
           <Bottom>
             <Info>
-              {list.map((el) => {
-                return <li>{el}</li>;
+              {LIST.map((el, idx) => {
+                return <li key={idx}>{el}</li>;
               })}
             </Info>
             <FooterIcon>
@@ -62,7 +63,6 @@ class Footer extends Component {
 }
 const FooterContainer = styled.footer`
   position: absolute;
-  /* z-index: -1; */
   bottom: 0;
   width: 100%;
   padding: 54px 0 50px;
