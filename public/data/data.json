@@ -1,0 +1,64 @@
+{
+  "Spaces": [
+    {
+      "spaceId": 1,
+      "imgUrl": "",
+      "title": "루프탑바베큐 아일랜드이너프 연남점",
+      "location": "연남동",
+      "categories": ["서울파티룸", "연남파티룸", "바베큐", "워크샵", "루프탑"], //해시태그
+      "fee": 150000,
+      "capacity": 40, //최대인원
+      "commentNumber": 0,
+      "likeNumber": 65,
+      "avgRating": 4.2,
+      "review": "",
+      "payemntType": , // 1: 바로결제, 2:승인결제
+      "classType": 1 // 1:프리미엄, 2:플러스, 3:일반
+    },
+    {
+      "spaceId": 2,
+      "imgUrl": "",
+      "title": "[홍대나누기]홍대7번루프탑New",
+      "location": "동교동",
+      "categories": ["루프탑", "브라이덜샤워", "생일파티", "파티룸", "공간대여"], //해시태그
+      "fee": 30000,
+      "capacity": 15, //최대인원
+      "commentNumber": 0,
+      "likeNumber": 78,
+      "avgRating": 4.4,
+      "review": "",
+      "payemntType": 2, // 1: 바로결제, 2:승인결제
+      "classType": 1 // 1:프리미엄, 2:플러스, 3:일반
+    },
+    {
+        "spaceId": 3,
+        "imgUrl": "",
+        "title": "지붕이 열리는 홍대루프탑[해돌]",
+        "location": "서교동",
+        "categories": ["생맥주무제한파티", "바베큐", "홍대루프탑", "단체모임/기업회식", "스몰웨딩/작은결혼식"], //해시태그
+        "fee": 110000,
+        "capacity": 100, //최대인원
+        "commentNumber": 0,
+        "likeNumber": 106,
+        "avgRating": 4.4,
+        "review": "",
+        "payemntType": 2, // 1: 바로결제, 2:승인결제
+        "classType": 2// 1:프리미엄, 2:플러스, 3:일반
+      },
+      {
+        "spaceId": 4,
+        "imgUrl": "",
+        "title": "하늘밑, [매일 소독중]",
+        "location": "청파동 1가",
+        "categories": ["루프탑", "이벤트", "생일파티", "바베큐", "촬영"], //해시태그
+        "fee": 10000,
+        "capacity": 6, //최대인원
+        "commentNumber": 119,
+        "likeNumber": 868,
+        "avgRating": 4.2,
+        "review": "",
+        "payemntType": 2, // 1: 바로결제, 2:승인결제
+        "classType": 2 // 1:프리미엄, 2:플러스, 3:일반
+      }
+  ]
+}

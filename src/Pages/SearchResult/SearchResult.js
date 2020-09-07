@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import PremiumZone from "./PremiumZone";
+import PlusZone from "./PlusZone";
+import NormalZone from "./NormalZone";
 import "./SearchResult.scss";
-import SpaceCard from "./SpaceCard";
 
 const OPTIONS = [
   { id: "1", type: "공간 유형", option: "모든 공간", icon: "downArrow" },
@@ -28,7 +30,24 @@ const BUTTON = [
 ];
 
 class SearchResult extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+  }
+  componentDidMount() {
+    fetch("http://localhost:3000/data/data.json")
+      .then((res) => res.json)
+      .then((res) => {
+        this.setState({
+          data: res.data,
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.data);
     return (
       <div className="SearchResult">
         <div className="noticeContainer">
@@ -93,7 +112,9 @@ class SearchResult extends Component {
             })}
           </select>
         </div>
-        <SpaceCard />
+        <PremiumZone />
+        <PlusZone />
+        <NormalZone />
       </div>
     );
   }
