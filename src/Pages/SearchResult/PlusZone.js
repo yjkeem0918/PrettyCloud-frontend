@@ -13,9 +13,6 @@ class PlusZone extends Component {
           <SpaceCard />
           <SpaceCard />
           <SpaceCard />
-          <SpaceCard />
-          <SpaceCard />
-          <SpaceCard />
         </div>
       </div>
     );
