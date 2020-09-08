@@ -16,7 +16,6 @@ class Login extends Component {
     this.setState({
       email: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkEmail = () => {
@@ -29,25 +28,25 @@ class Login extends Component {
     this.setState({
       pw: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   handleLogin = () => {
-    fetch("", {
+    fetch("http://192.168.219.112:8001/users/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: this.state.email,
-        pw: this.state.pw,
+        password: this.state.pw,
       }),
     })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.token) {
-          localStorage.setItem("token", response.token);
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.token) {
+          localStorage.setItem("token", res.token);
           this.props.history.push("./");
+          alert("로그인 성공했습니다.");
         } else {
           alert("이메일 또는 비밀번호를 확인하세요.");
         }
@@ -97,19 +96,15 @@ class Login extends Component {
                 </div>
                 <a>비밀번호 찾기</a>
               </div>
-              <Link to="/main">
-                <button
-                  onClick={this.handleLogin}
-                  disabled={ email && pw.length > 5 && alertEmail ? false : true}
-                >
-                  이메일로 로그인
-                </button>
-              </Link>
+              <button
+                onClick={this.handleLogin}
+                disabled={email && pw.length > 5 && alertEmail ? false : true}
+              >
+                이메일로 로그인
+              </button>
               <p>
                 아직 스페이스클라우드 회원이 아니신가요?
-                <Link to="/signUp">
-                  <a href="#">회원가입</a>
-                </Link>
+                <Link to="/signUp">회원가입</Link>
               </p>
             </section>
           </div>

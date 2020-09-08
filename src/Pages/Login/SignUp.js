@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AsideNav from "../../Components/AsideNav";
 import "./SignUp.scss";
 
 class SignUp extends Component {
@@ -26,7 +25,6 @@ class SignUp extends Component {
     this.setState({
       name: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkName = (e) => {
@@ -39,7 +37,6 @@ class SignUp extends Component {
     this.setState({
       email: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkEmail = () => {
@@ -58,14 +55,12 @@ class SignUp extends Component {
     this.setState({
       pwAlert: this.state.pw.length > 5 ? true : false,
     });
-    console.log(this.state.pw);
   };
 
   handleCheckPw = (e) => {
     this.setState({
       pwCheck: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   testPw = (e) => {
@@ -86,24 +81,29 @@ class SignUp extends Component {
   };
 
   handleSignUp = () => {
-    fetch("", {
+    fetch("http://192.168.219.112:8001/users/signup", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        pw: this.state.pw,
+        password: this.state.pw,
       }),
     })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.message === "SUCCESS") {
-          localStorage.setItem("token", response.token);
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.message === "SUCCESS") {
+          alert("회원가입이 완료되었습니다.");
           this.props.history.push("/login");
+          window.location.reload();
         } else {
-          alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
+          alert("회원가입에 실패하였습니다.");
         }
       });
   };
+
   render() {
     const {
       name,
@@ -224,25 +224,25 @@ class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              <Link to="/login">
-                <button
-                  onClick={this.handleSign}
-                  disabled={
-                    name &&
-                    email &&
-                    pw &&
-                    alert &&
-                    emailAlert &&
-                    pwAlert &&
-                    pwCheckAlert &&
-                    checked
-                      ? false
-                      : true
-                  }
-                >
-                  회원가입{" "}
-                </button>
-              </Link>
+              {/* <Link to="/login"> */}
+              <button
+                onClick={this.handleSignUp}
+                disabled={
+                  name &&
+                  email &&
+                  pw &&
+                  alert &&
+                  emailAlert &&
+                  pwAlert &&
+                  pwCheckAlert &&
+                  checked
+                    ? false
+                    : true
+                }
+              >
+                회원가입{" "}
+              </button>
+              {/* </Link> */}
             </section>
           </div>
         </main>
