@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AsideNav from "../../Components/AsideNav";
 import "./SignUp.scss";
 
 class SignUp extends Component {
@@ -84,7 +85,36 @@ class SignUp extends Component {
     });
   };
 
+  handleSignUp = () => {
+    fetch("", {
+      method: "POST",
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        pw: this.state.pw,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.message === "SUCCESS") {
+          localStorage.setItem("token", response.token);
+          this.props.history.push("/login");
+        } else {
+          alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
+        }
+      });
+  };
   render() {
+    const {
+      name,
+      email,
+      pw,
+      alert,
+      emailAlert,
+      pwAlert,
+      pwCheckAlert,
+      checked,
+    } = this.state;
     return (
       <div className="SignUp">
         <main>
@@ -110,7 +140,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkName}
                   onChange={this.handleName}
                 />
-                <div className={this.state.alert ? "hiddenAlert" : "alert"}>
+                <div className={alert ? "hiddenAlert" : "alert"}>
                   닉네임은 두 글자 이상(특수문자 입력 불가) 입력해주세요.
                 </div>
                 <input
@@ -118,9 +148,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkEmail}
                   onChange={this.handleEmail}
                 />
-                <div
-                  className={this.state.emailAlert ? "hiddenAlert" : "alert"}
-                >
+                <div className={emailAlert ? "hiddenAlert" : "alert"}>
                   이메일 형식이 유효하지 않습니다.
                 </div>
                 <input
@@ -129,7 +157,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkPw}
                   onChange={this.handlePw}
                 />
-                <div className={this.state.pwAlert ? "hiddenAlert" : "alert"}>
+                <div className={pwAlert ? "hiddenAlert" : "alert"}>
                   비밀번호가 너무 짧습니다.
                 </div>
                 <input
@@ -138,9 +166,7 @@ class SignUp extends Component {
                   onChange={this.handleCheckPw}
                   onKeyUp={this.testPw}
                 />
-                <div
-                  className={this.state.pwCheckAlert ? "hiddenAlert" : "alert"}
-                >
+                <div className={pwCheckAlert ? "hiddenAlert" : "alert"}>
                   입력하신 비밀번호와 동일하게 입력해주세요.
                 </div>
               </div>
@@ -150,7 +176,7 @@ class SignUp extends Component {
                     type="checkbox"
                     id="a1"
                     onClick={this.handleAllCheckbox}
-                    checked={this.state.checked}
+                    checked={checked}
                   />
                   <label for="a1"> </label>
                   <span>아래 약관에 모두 동의합니다.</span>
@@ -198,8 +224,24 @@ class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              <Link to="/">
-                <button>회원가입</button>
+              <Link to="/login">
+                <button
+                  onClick={this.handleSign}
+                  disabled={
+                    name &&
+                    email &&
+                    pw &&
+                    alert &&
+                    emailAlert &&
+                    pwAlert &&
+                    pwCheckAlert &&
+                    checked
+                      ? false
+                      : true
+                  }
+                >
+                  회원가입{" "}
+                </button>
               </Link>
             </section>
           </div>
