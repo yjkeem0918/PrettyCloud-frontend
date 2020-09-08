@@ -1,14 +1,19 @@
 .DetailNav {
+  position: sticky;
+  top: 76px;
+
   .navWrapper {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     border-bottom: 1px solid #704de4;
+
     .navButton {
       position: relative;
       font-size: 16px;
       text-align: center;
       padding: 18px 45px;
+
       a {
         text-align: center;
         color: #656565;

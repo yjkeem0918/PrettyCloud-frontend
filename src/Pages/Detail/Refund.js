@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import "./Refund.scss";
 
 const REFUND_DATA = [
-  { id: "이용 8일 전", refund: "총 금액의 100% 환불" },
-  { id: "이용 7일 전", refund: "총 금액의 90% 환불" },
-  { id: "이용 6일 전", refund: "총 금액의 80% 환불" },
-  { id: "이용 5일 전", refund: "총 금액의 70% 환불" },
-  { id: "이용 4일 전", refund: "총 금액의 60% 환불" },
-  { id: "이용 3일 전", refund: "총 금액의 50% 환불" },
-  { id: "이용 2일 전", refund: "환불 불가" },
-  { id: "이용 전날", refund: "환불 불가" },
-  { id: "이용 당일", refund: "환불 불가" },
+  { dates: "이용 8일 전", refund: "총 금액의 100% 환불" },
+  { dates: "이용 7일 전", refund: "총 금액의 90% 환불" },
+  { dates: "이용 6일 전", refund: "총 금액의 80% 환불" },
+  { dates: "이용 5일 전", refund: "총 금액의 70% 환불" },
+  { dates: "이용 4일 전", refund: "총 금액의 60% 환불" },
+  { dates: "이용 3일 전", refund: "총 금액의 50% 환불" },
+  { dates: "이용 2일 전", refund: "환불 불가" },
+  { dates: "이용 전날", refund: "환불 불가" },
+  { dates: "이용 당일", refund: "환불 불가" },
 ];
 
 class Refund extends Component {
@@ -32,8 +32,8 @@ class Refund extends Component {
           <ol>
             {REFUND_DATA.map((el) => {
               return (
-                <li className="refundList" key={el.id}>
-                  <span className="day">{el.id}</span>
+                <li className="refundList" key={el.dates}>
+                  <span className="day">{el.dates}</span>
                   <span className="price">{el.refund}</span>
                 </li>
               );

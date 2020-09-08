@@ -1,0 +1,20 @@
+.DetailList {
+  .listDetail {
+    border-bottom: 1px solid #ebebeb;
+    color: #656565;
+    .lists {
+      list-style-type: square;
+      list-style-position: inside;
+      padding: 12px 0 11px;
+      font-size: 14px;
+      border-top: 1px solid #ebebeb;
+      .listTitle {
+        left: 14px;
+        margin-right: 18px;
+      }
+      .data {
+        color: #000;
+      }
+    }
+  }
+}

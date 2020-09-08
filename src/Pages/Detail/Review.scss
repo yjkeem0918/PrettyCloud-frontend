@@ -24,22 +24,6 @@
     .reviewsNumber {
       color: #6d3afb;
       margin-left: 5px;
-      .dot {
-        width: 4px;
-        height: 4px;
-        margin: 0 10px;
-        display: inline-block;
-        border-radius: 50%;
-        background-color: #949494;
-        vertical-align: middle;
-      }
-    }
-    .average {
-      margin-right: 5px;
-      .stars {
-        margin-left: 5px;
-        color: #6d3afb;
-      }
     }
   }
   .paging {
