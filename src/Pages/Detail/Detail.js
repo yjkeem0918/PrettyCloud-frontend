@@ -14,31 +14,81 @@ class Detail extends Component {
     super();
 
     this.state = {
-      header: "스튜디오 바닐라베리 [카페 통대관]",
-      subDescrip: "자연광 화이트톤 카페 & 스튜디오",
-      shopName: "스튜디오 바닐라베리",
-      price: "35,000",
-      spaceDesc:
-        "어린이대공원역 인근에 위치한 카페 겸 스튜디오 입니다. 파티, 세미나, 스튜디오, 갤러리 등 다양한 공간으로 활용 가능합니다. 자연광과 인공광을 동시에 사용할 수 있으며, 30개의 색상 변환 전구로 다양한 색상으로 공간을 연출할 수 있습니다. 편의 시설도 갖춰져 있기 때문에 다양한 공간 활용이 가능합니다. 그레이와 화이트 인테리어가 돋보이며, 사진 촬영 용도로도 전혀 손색이 없습니다.",
-      subHeader: "자연광 화이트톤 카페 & 스튜디오",
+      header: "",
+      subDescription: "",
+      price: "",
+      spaceDesc: "",
+      subHeader: "",
+      tag: [],
+      spaceIntro: "",
+      opening_hour: "",
+      closing_hour: "",
+      closed_day: "",
+      spaceType: [],
     };
   }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/detail.json")
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        this.setState({
+          id: res.space.id,
+          header: res.space.title,
+          subDescription: res.space.subTitle,
+          tag: res.categories,
+          spaceIntro: res.space.description,
+          opening_hour: res.space.opening_hour,
+          closing_hour: res.space.closing_hour,
+          closed_day: res.space.closed_day,
+          price: res.space.fee,
+          precautions: res.space.precautions,
+          spaceDesc: res.space.description,
+          spaceType: res.categories,
+          refund_policy: res.space.refund_policy,
+        });
+      });
+  }
+
   render() {
+    const {
+      header,
+      subDescription,
+      tag,
+      price,
+      spaceDesc,
+      spaceIntro,
+      opening_hour,
+      closing_hour,
+      closed_day,
+      spaceType,
+    } = this.state;
+
     return (
       <div className="Detail">
         <div className="detailWrapper">
           <div className="pageHeaderBox">
-            <h2 className="pageHeader">{this.state.header}</h2>
-            <p className="subDescription">{this.state.subDescrip}</p>
-            <Tags />
+            <h2 className="pageHeader">{header}</h2>
+            <p className="subDescription">{subDescription}</p>
+            <Tags categories={tag} />
           </div>
           <div className="detailForms">
             <div className="rightDetailSpaceBox">
               <div className="rightDetailHeaderBox">
                 <h3 className="rightDetailHeader">세부공간 선택</h3>
                 <div className="iconContainer">
-                  <img src="images/share.png" alt="shareicon" />
-                  <img src="images/heart.png" alt="hearticon" />
+                  <img
+                    className="share"
+                    src="images/share.png"
+                    alt="shareicon"
+                  />
+                  <img
+                    className="heart"
+                    src="images/heart.png"
+                    alt="hearticon"
+                  />
                 </div>
               </div>
               <div className="spaceBox">
@@ -53,19 +103,72 @@ class Detail extends Component {
                   <div className="shopInfoBox">
                     <div className="shopInfo">
                       <input type="radio" className="radio" />
-                      <span className="shopName">{this.state.shopName}</span>
+                      <span className="shopName">전체공간</span>
                     </div>
                     <div className="priceTime">
-                      <div className="price">₩{this.state.price}</div>
+                      <div className="price">₩{price}</div>
                       <span className="time"> / 시간</span>
                     </div>
                   </div>
                   <div className="spaceInfoWrapper">
                     <div className="meetSpaceInfo">
                       <div className="meetSpacePhoto"></div>
-                      <p className="meetSpaceDesc">{this.state.spaceDesc}</p>
-                      <DetailList />
+                      <p className="meetSpaceDesc">{spaceDesc}</p>
+                      <DetailList spaceType={spaceType} />
                     </div>
+                    <div className="selectReservation">
+                      <div className="select">날짜선택</div>
+                    </div>
+                    <form className="selectDate">
+                      <input
+                        className="choose"
+                        type="date"
+                        name="bday"
+                        required
+                        pattern="\d{4}-\d{2}-\d{2}"
+                      ></input>
+                      <span className="validity"></span>
+                      <p className="precautions">
+                        예약 도중 이탈하시는 경우(결제 오류 및 취소 등), 중복
+                        예약 방지 목적으로 10분 동안 해당 날짜에 예약하실 수
+                        없습니다.
+                      </p>
+                    </form>
+                    <div className="selectTime">
+                      <div className="select">시간선택</div>
+                    </div>
+                    <div className="chooseTime">
+                      <input
+                        className="timeInput"
+                        type="time"
+                        min="09:00"
+                        max="18:00"
+                        required
+                      ></input>
+                      <div className="wave">~</div>
+                      <input
+                        className="timeInput"
+                        type="time"
+                        min="09:00"
+                        max="18:00"
+                        required
+                      ></input>
+                    </div>
+                    <div className="selectReservation">
+                      <div className="select">총 예약인원</div>
+                    </div>
+                    <div className="numBox">
+                      <div className="btnMinus"></div>
+                      <input
+                        className="numberSet"
+                        value="1"
+                        type="text"
+                      ></input>
+                      <div className="btnPlus"></div>
+                    </div>
+                  </div>
+                  <div className="reservationButtonBox">
+                    <p className="reservationButton">바로 예약하기</p>
                   </div>
                 </div>
               </div>
@@ -73,11 +176,16 @@ class Detail extends Component {
             <div className="photoWrapper">
               <div className="mainPhoto"></div>
               <div className="textBox">
-                <h3 className="textBoxHeader">{this.state.subHeader}</h3>
+                <h3 className="textBoxHeader">{subDescription}</h3>
               </div>
             </div>
             <DetailNav />
-            <SpaceInfo />
+            <SpaceInfo
+              spaceInfo={spaceIntro}
+              openHour={opening_hour}
+              closingHour={closing_hour}
+              closed_day={closed_day}
+            />
             <Facility />
             <Reservation />
             <Refund />

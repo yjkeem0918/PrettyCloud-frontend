@@ -45,10 +45,14 @@
             display: flex;
             justify-content: space-between;
             width: 65px;
-            img {
+            .share {
               width: 22px;
               height: 22px;
               cursor: pointer;
+            }
+            .heart {
+              width: 22px;
+              height: 22px;
             }
           }
         }
@@ -96,9 +100,7 @@
               }
             }
             .spaceInfoWrapper {
-              display: flex;
-              justify-content: center;
-              padding: 15px 20px 30px 20px;
+              padding: 15px 20px 0px 20px;
               border: 1px solid #704de4;
               background-color: #fff;
               font-size: 14px;
@@ -118,6 +120,117 @@
                   line-height: 1.4;
                 }
               }
+              .selectReservation {
+                margin-top: 30px;
+                height: 39px;
+                border-bottom: 3px solid #704de4;
+                .select {
+                  margin-top: 17px;
+                  font-size: 17px;
+                  font-weight: 700;
+                  padding-left: 8px;
+                  line-height: 21px;
+                }
+              }
+              .selectDate {
+                margin-top: 20px;
+                position: relative;
+                display: inline-block;
+                .choose {
+                  margin-bottom: 20px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  width: 100%;
+                  text-align: center;
+                  border: 2px solid #f6f6f6;
+                  padding: 3px;
+                  font-weight: 500;
+                  font-size: 15px;
+                }
+                .precautions {
+                  font-size: 14px;
+                  line-height: 18px;
+                  color: #ff3a48;
+                }
+              }
+              .selectTime {
+                margin-top: 30px;
+                height: 39px;
+                border-bottom: 3px solid #704de4;
+                .select {
+                  margin-top: 17px;
+                  font-size: 17px;
+                  font-weight: 700;
+                  padding-left: 8px;
+                  line-height: 21px;
+                }
+              }
+              .chooseTime {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                .timeInput {
+                  margin-top: 20px;
+                  width: 100%;
+                  text-align: center;
+                  border: 2px solid #f6f6f6;
+                  padding: 3px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  letter-spacing: 0.5px;
+                  height: 30px;
+                }
+                .wave {
+                  margin-top: 17px;
+                  margin-left: 8px;
+                  margin-right: 8px;
+                }
+              }
+              .numBox {
+                display: flex;
+                justify-content: space-between;
+                height: 50px;
+                border: 1px solid #e0e0e0;
+                margin: 30px 0;
+                .btnMinus {
+                  display: inline-block;
+                  background-size: 684px 663px;
+                  background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+                  background-position: -112px -451px;
+                  width: 48px;
+                  height: 48px;
+                  border-right: 1px solid #e0e0e0;
+                  cursor: pointer;
+                }
+                .numberSet {
+                  outline: none;
+                  border: none;
+                  text-align: center;
+                }
+                .btnPlus {
+                  display: inline-block;
+                  background-size: 684px 663px;
+                  background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+                  background-position: -216px -451px;
+                  width: 48px;
+                  height: 48px;
+                  border-left: 1px solid #e0e0e0;
+                  cursor: pointer;
+                }
+              }
+            }
+            .reservationButtonBox {
+              background-color: #704de4;
+              height: 60px;
+              text-align: center;
+              cursor: pointer;
+              .reservationButton {
+                height: 60px;
+                line-height: 60px;
+                width: 100%;
+                color: #ffd014;
+                font-size: 18px;
+                font-weight: 350;
+                letter-spacing: 1px;
+              }
             }
           }
         }
@@ -135,7 +248,7 @@
         border-top: 1px solid #f6f6f6;
         margin-bottom: 50px;
         .textBoxHeader {
-          padding: 50px 100px 0 0;
+          padding: 50px 0 0 0;
           font-size: 48px;
           line-height: 60px;
           font-weight: lighter;

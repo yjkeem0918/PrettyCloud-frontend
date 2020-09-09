@@ -1,9 +1,93 @@
 {
-  "data": [
-    { "name": "#자연광스튜디오" },
-    { "name": "#카페대관" },
-    { "name": "#쿠킹스튜디오" },
-    { "name": "#유튜브촬영" },
-    { "name": "#사진촬영" }
+  "space": {
+    "id": 2,
+    "title": "[소모임특가]경복궁뷰 루프탑탁트인",
+    "subTitle": "대한민국 최고의 뷰 프라이빗 루프탑!",
+    "description": "★돈스파이크가 극찬한, 마마무도 영상 촬영한 바로 그 파티룸★\n\n탁트인에서 우리끼리, 안전하게 놀자!\n한번에 1팀만 받고 매일 소독하는 탁트인은 카페보다 안전해요♡\n!!5인이하 모임시 7만원부터, 초특가할인중!!\n\n경복궁과 청와대가 바로앞에 펼쳐져 있는\n대한민국 최고의 뷰 프라이빗 루프탑 파티룸!!\n\n루프탑탁트인의 세가지 테마!\n1. 경복궁과 청와대가 정말 한눈에 보이는 루프탑 테라스\n2. 하늘하늘한 쉬폰커튼과 금색 조명의 홀\n3. 엔틱, 럭셔리한 메인 파티 공간\n\n와인냉장고, 와인잔, 오프너, 맥주잔, 소주잔, 얼음 등 음주관련 있을건 다 있어요!\n단독 화장실, 욕실\n직접 따라 마시는 생맥주\n대형 바베큐 그릴, 바베큐패키지, 프로젝터\n별도 주방, 대형 냉장고, 전자레인지, 정수기 등 조리시설 완비\n\n* 낮타임 시간별 대관은 개별문의 부탁드려요\n\n* 문의 : 카카오톡 플러스친구 @루프탑탁트인\n인스타그램 @rooftop_taktinn",
+    "opening_hour": 6,
+    "closing_hour": 23,
+    "closed_day": "공휴일",
+    "capacity": 30,
+    "fee": "10000.0000",
+    "precautions": "현관에서 신발을 꼭 벗고 들어와주세요.모든 공간에서 금연.간단한 음료 외 기타 음식물 반입금지.실외화 및 바닥에 손상을 주는 신발 금지.퇴실시 모든 전자기기 전원 OFF.각 방에 배치된 의자 및 테이블 다른방으로 이동 금지.다음 사람을 위해 깨끗이 이용하기.다음 예약자를 위해 예약시간 준수.환불 및 스케줄 변경시 정책에 따라 금액이 발생하오니 참고하여 주시기 바랍니다.새벽 통 대관 및 장기대관 문의 사항 있을 시 문자나 전화부탁드립니다",
+    "refund_policy": "이용 8일 전 : 총 금액의 100% 환불.이용 7일 전 : 총 금액의 100% 환불.이용 6일 전 : 총 금액의 100% 환불.이용 5일 전 : 총 금액의 100% 환불.이용 4일 전 : 총 금액의 100% 환불.이용 3일 전 : 총 금액의 100% 환불.이용 2일 전 : 총 금액의 100% 환불.이용 전날 : 총 금액의 50% 환불.이용 당일 : 환불 불가",
+    "address": "서울특별시 종로구 삼청로 4 6층 루프탑 전체! (서울한복카페 있는 노란색 빌딩 6층)",
+    "like_number": 2,
+    "review_number": 2,
+    "avg_rating": "4.0",
+    "min_time": 2,
+    "PaymentTypeId": 1,
+    "ClassTypeId": 1
+  },
+  "urls": [
+    "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109857_82d420e76696af8d13cf1f2fc5df1e34.jpeg?type=m&w=900&h=900&autorotate=true&quality=90",
+    "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109861_4d461aba39bbba33bbfae8497f5c491a.jpeg?type=m&w=900&h=900&autorotate=true&quality=90"
+  ],
+  "categories": [
+    "엠티장소",
+    "세미나실",
+    "코워킹스페이스",
+    "파티룸",
+    "독립오피스",
+    "할인"
+  ],
+  "amenities": [
+    {
+      "name": "내부화장실",
+      "img_url": "https://static.thenounproject.com/png/62921-200.png",
+      "description": "화장실은 실내에 있어 밖으로 왔다갔다 불편함 없이 이용가능하세요^-^. 또한 휴지, 핸드워시, 수건 이용가능 하세요."
+    },
+    {
+      "name": "와이파이",
+      "img_url": "https://p7.hiclipart.com/preview/30/221/190/wi-fi-wireless-network-icon-clip-art-wifi-icon-png.jpg",
+      "description": "어디서든 무제한 무료 와이파이 사용 가능하세요 ^__^"
+    },
+    {
+      "name": "음식물반입",
+      "img_url": "https://e7.pngegg.com/pngimages/518/962/png-clipart-fast-food-drink-junk-food-eating-food-icon-food-text.png",
+      "description": "외부 음식/배달 등이 가능합니다."
+    },
+    {
+      "name": "주차가능",
+      "img_url": "https://e7.pngegg.com/pngimages/781/441/png-clipart-car-park-smart-parking-computer-icons-car-text-car.png",
+      "description": "24시간 주차장 완비, 무료 주차장 이용가능합니다 ^__^"
+    },
+    {
+      "name": "금연",
+      "img_url": "https://cdn3.iconfinder.com/data/icons/block/32/no_smoking-512.png",
+      "description": "실내 흡연 불가능합니다. 적발시 보증금 차감 및 퇴실 조치 됩니다."
+    },
+    {
+      "name": "취사시설",
+      "img_url": "https://image.flaticon.com/icons/png/512/113/113339.png",
+      "description": "전자레인지. 전기레인지. 조리기구 완비. 다만 시설물 오염과 화재에 꼭! 주의해주세요♡"
+    },
+    {
+      "name": "주류반입",
+      "img_url": "https://www.iconpacks.net/icons/2/free-beer-icon-1786-thumb.png",
+      "description": "주류반입 가능합니다. 다만 시설물 오염에 주의해주시고 이용후 깨끗하게 정리해주세요"
+    },
+    {
+      "name": "애견동반불가",
+      "img_url": "https://previews.123rf.com/images/tmricons/tmricons1707/tmricons170700056/81206050-no-pets-icon.jpg",
+      "description": "애견 동반 불가능 합니다. 적발시 보증금 차감 및 퇴실 조치 됩니다."
+    },
+    {
+      "name": "테라스",
+      "img_url": "https://image.shutterstock.com/image-vector/terrace-vector-icon-isolated-on-260nw-1166112052.jpg",
+      "description": "야외 테라스가 있어서 소음 걱정없이 마음껏 파티를 즐기실 수 있습니다"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 3,
+      "rating": "4.0",
+      "description": "넓고 좋았습니다.운영자님께서 친절하게 문자로 대답을 빠르게 해주셔서 더 좋았습니다"
+    },
+    {
+      "id": 4,
+      "rating": "4.0",
+      "description": "깔끔하고 깨끗한이미지 좋아요, 깔끔하고 깨끗한이미지 좋아요"
+    }
   ]
 }
