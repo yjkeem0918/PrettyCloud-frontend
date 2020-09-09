@@ -25,6 +25,7 @@ class Detail extends Component {
       closing_hour: "",
       closed_day: "",
       spaceType: [],
+      numValue: 1,
     };
   }
 
@@ -52,6 +53,23 @@ class Detail extends Component {
       });
   }
 
+  addA = () => {
+    if (this.state.numValue >= 10) {
+      alert("최대 인원은 10명 입니다.");
+      return;
+    }
+    this.setState({ numValue: this.state.numValue + 1 });
+  };
+
+  subtractA = () => {
+    const { numValue } = this.state;
+    if (numValue <= 1) {
+      alert("최소 인원은 1명 입니다.");
+      return;
+    }
+    this.setState({ numValue: this.state.numValue - 1 });
+  };
+
   render() {
     const {
       header,
@@ -64,6 +82,7 @@ class Detail extends Component {
       closing_hour,
       closed_day,
       spaceType,
+      numValue,
     } = this.state;
 
     return (
@@ -129,8 +148,8 @@ class Detail extends Component {
                       ></input>
                       <span className="validity"></span>
                       <p className="precautions">
-                        예약 도중 이탈하시는 경우(결제 오류 및 취소 등), 중복
-                        예약 방지 목적으로 10분 동안 해당 날짜에 예약하실 수
+                        예약 도중 이탈하시는 경우 (결제 오류 및 취소 등), 중복
+                        예약 방지 목적으로 10분 동안 해당 날짜에 예약 하실 수
                         없습니다.
                       </p>
                     </form>
@@ -155,16 +174,16 @@ class Detail extends Component {
                       ></input>
                     </div>
                     <div className="selectReservation">
-                      <div className="select">총 예약인원</div>
+                      <div className="select">총 예약 인원</div>
                     </div>
                     <div className="numBox">
-                      <div className="btnMinus"></div>
+                      <div onClick={this.subtractA} className="btnMinus"></div>
                       <input
                         className="numberSet"
-                        value="1"
+                        value={numValue}
                         type="text"
                       ></input>
-                      <div className="btnPlus"></div>
+                      <div onClick={this.addA} className="btnPlus"></div>
                     </div>
                   </div>
                   <div className="reservationButtonBox">
