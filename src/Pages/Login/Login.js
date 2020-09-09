@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
+import AsideNav from "../../Components/AsideNav";
 
 class Login extends Component {
   constructor() {
@@ -26,6 +27,7 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
+        <AsideNav />
         <main>
           <h1>로그인</h1>
           <div className="loginContainer">
