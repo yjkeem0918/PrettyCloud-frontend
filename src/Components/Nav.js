@@ -38,7 +38,7 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 7;
   top: 0;
   height: 78px;
   width: 100%;

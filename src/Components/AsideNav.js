@@ -32,10 +32,20 @@ class AsideNav extends Component {
     });
   };
 
+  handleBg = () => {
+    this.setState({
+      close: false,
+    });
+  };
+
   render() {
     return (
       <div className="AsideNav">
         <Nav open={this.openAside} />
+        <div
+          className={this.state.close ? "bg" : "no"}
+          onClick={this.handleBg}
+        ></div>
         <div className={this.state.close ? "showAside" : "hiddenAside"}>
           <aside>
             <div className="profileBox">
