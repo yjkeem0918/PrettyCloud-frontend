@@ -1,0 +1,22 @@
+{
+  "mainSlider": [
+    {
+      "id": 1,
+      "title": "우정사진 화보 기획전",
+      "img_url": "https://kr.object.ncloudstorage.com/scloud-service/service/159532123_9351cf15881a60bd7f960b43edf68345.png",
+      "description": "카메라 렌탈이 가능한 촬영 스튜디오 모음"
+    },
+    {
+      "id": 2,
+      "title": "집중 잘되는 스터디 공간 모음",
+      "img_url": "https://kr.object.ncloudstorage.com/scloud-service/service/159281308_f64e2393f4a9ab488ef96acebc9ae8a9.png",
+      "description": "하루종일 공부할 공간이 필요하다면"
+    },
+    {
+      "id": 3,
+      "title": "웨비나 추천 공간 기획전",
+      "img_url": "https://kr.object.ncloudstorage.com/scloud-service/service/158518632_e98af8f5663868d68f8d7b68df2584b0.png",
+      "description": "강의도 촬영이 대세! 웨비나 추천공간 모음"
+    }
+  ]
+}

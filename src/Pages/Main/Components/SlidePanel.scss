@@ -5,11 +5,11 @@
     height: 450px;
     padding-bottom: 20px;
     background-image: url(https://kr.object.ncloudstorage.com/scloud-service/service/159281061_a2dd593a8f8234e2b8c715f61e58d6bd.png);
-    overflow: hidden;
+    background-size: cover;
 
-    // .slidPanelImg {
-    //   width: 100%;
-    // }
+    .slidPanelImg {
+      object-fit: cover;
+    }
 
     .slidePanelText {
       font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
@@ -35,7 +35,6 @@
           Helvetica, Apple SD Gothic Neo, Sans-serif !important;
         color: #ffd014;
         background-color: hsla(0, 0%, 100%, 0.15);
-
         height: 34px;
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 34px;

@@ -1,54 +1,43 @@
 import React, { Component } from "react";
 import SlidePanel from "./Components/SlidePanel";
-import RecommendSpace from "./Components/RecommendSpace";
+import RecommendSpace from "./Components/RecommendSpace/RecommendSpace";
 import SearchCard from "../SearchResult/SpaceCard";
-import UserReview from "./Components/UserReview";
+import UserReview from "./UserReview/UserReview";
 import "./Main.scss";
 
 export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      spaceList: [
-        "루프탑",
-        "촬영스튜디오",
-        "엠티장소",
-        "스터디룸",
-        "연습실",
-        "파티룸",
-        "브라이덜샤워",
-        "회의실",
-        "세미나실",
-        "카페",
-        "레저시설",
-        "독립오피스",
-        "다목적홀",
-        "공연장",
-        "코워킹스페이스",
-        "작업실",
-        "한옥",
-        "할인",
-      ],
-      reviewTag: ["회의실", "세미나실", "다목적홀"],
-      reviewName: "일산 더리츠 파티룸",
-      contentPrice: "89,000 원/패키지",
-      contents:
-        "되게 넓고 앤틱한 분위기가 너무 예쁜 곳이였어요! 보드게임이랑 소품이랑 조명이랑 다 있어서 사진도 많이 찍고 잘 놀다가요! :)",
+      mainSlider: [],
+      categories: [],
+      mainInfo: [],
+      offset: 0,
     };
   }
+
+  componentDidMount = () => {
+    fetch("http://localhost:3000/Data/categories.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          categories: res.categories,
+        });
+      });
+  };
 
   render() {
     return (
       <div className="Main">
-        <section className="topSlidePanel">
-          <SlidePanel />
+        <section className="mainSlider">
+          <SlidePanel mainSlider={this.state.mainSlider} />
         </section>
 
         <section className="searchSpace">
           <p className="mainSubTitle">어떤 공간을 찾고 있나요?</p>
           <div className="spaceListBox">
             <ul className="spaceList">
-              {this.state.spaceList.map((el) => {
+              {this.state.categories.map((el) => {
                 return <li className="listContents">{el}</li>;
               })}
             </ul>
@@ -58,13 +47,13 @@ export default class Main extends Component {
         <section className="recommendSpace">
           <p className="mainSubTitle">오늘의 추천공간</p>
           <div className="recommendSlide">
-            <SearchCard />
+            <RecommendSpace />
           </div>
         </section>
         <section className="userReview">
           <p className="mainSubTitle">이용자 리뷰</p>
           <p className="titleContent">생생한 후기를 만나보세요</p>
-          {/* <UserReview /> */}
+          <UserReview />
         </section>
       </div>
     );
