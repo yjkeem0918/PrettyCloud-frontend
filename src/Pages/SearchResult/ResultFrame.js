@@ -32,7 +32,7 @@ class ResultFrame extends Component {
       <div className="ResultFrame">
         <div className="noticeContainer">
           <div className="noticeBox">
-            <span className="title">{this.props.qureyString}</span>
+            <span className="title">{this.props.queryString}</span>
             <span className="resultText">(으)로 검색한 결과입니다.</span>
 
             <div className="selectBarContainer">

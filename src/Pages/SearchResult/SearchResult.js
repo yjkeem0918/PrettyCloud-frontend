@@ -15,13 +15,13 @@ class SearchResult extends Component {
       plus: [],
       normal: [],
       data: [],
-      qureyString: "루프탑",
+      queryString: "루프탑",
       offset: 0,
     };
   }
   componentDidMount() {
     fetch(
-      `http://192.168.219.112:8001/spaces/search?search=${this.state.qureyString}&offset=${this.state.offset}&limit=${LIMIT}`
+      `http://192.168.219.112:8001/spaces/search?search=${this.state.queryString}&offset=${this.state.offset}&limit=${LIMIT}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -29,7 +29,7 @@ class SearchResult extends Component {
           premium: res.premium,
           plus: res.plus,
           normal: res.normal,
-          // qureyString: "촬영스튜디오",
+          // queryString: "촬영스튜디오",
           offset: LIMIT + 6,
         });
       });
@@ -43,7 +43,7 @@ class SearchResult extends Component {
 
     if (scrollTop + clientHeight >= scrollHeight) {
       // fetch(
-      //   `http://192.168.219.107:8001/spaces/search?search=${this.state.qureyString}&offset=${this.state.offset}&limit=${LIMIT}`
+      //   `http://192.168.219.107:8001/spaces/search?search=${this.state.queryString}&offset=${this.state.offset}&limit=${LIMIT}`
       // )
       //   .then((res) => res.json())
       //   .then((res) => {
@@ -58,7 +58,7 @@ class SearchResult extends Component {
     const { premium, plus, normal } = this.state;
     return (
       <div className="SearchResult">
-        <ResultFrame qureyString={this.state.qureyString} />
+        <ResultFrame queryString={this.state.queryString} />
         <PremiumZone premiumData={premium} />
         <PlusZone plusData={plus} />
         <NormalZone normalData={normal} />
