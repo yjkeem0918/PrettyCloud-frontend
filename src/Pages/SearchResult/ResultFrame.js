@@ -32,7 +32,7 @@ class ResultFrame extends Component {
       <div className="ResultFrame">
         <div className="noticeContainer">
           <div className="noticeBox">
-            <span className="title">루프탑</span>
+            <span className="title">{this.props.qureyString}</span>
             <span className="resultText">(으)로 검색한 결과입니다.</span>
 
             <div className="selectBarContainer">
@@ -83,13 +83,9 @@ class ResultFrame extends Component {
           </div>
 
           <select>
-            {SELECT.map((el) => {
-              return (
-                <>
-                  <option value={el.value}>{el.order}</option>
-                </>
-              );
-            })}
+            {SELECT.map((el) => (
+              <option value={el.value}>{el.order}</option>
+            ))}
           </select>
         </div>
       </div>
