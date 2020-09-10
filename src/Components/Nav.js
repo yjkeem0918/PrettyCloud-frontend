@@ -3,16 +3,32 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      queryString: "",
+    };
+  }
+
+  handleText = (e) => {
+    this.setState({
+      queryString: e.target.value,
+    });
+  };
+
   render() {
     return (
       <NavContainer>
         <div>
-          <NavLogoBox>
-            <div></div>
+          <NavLogoBox to="/">
+            <div />
           </NavLogoBox>
           <SearchBox>
-            <Search placeholder="지역 또는 공간유형을 검색해보세요!"></Search>
-            <SearchWrap href="#">
+            <Search
+              placeholder="지역 또는 공간유형을 검색해보세요!"
+              onChange={this.handleText}
+            ></Search>
+            <SearchWrap to={`/searchresult?query=${this.state.queryString}`}>
               <div></div>
             </SearchWrap>
           </SearchBox>
@@ -25,7 +41,7 @@ class Nav extends Component {
             <a>공간 등록하기</a>
           </Link>
           <NavLinkIcon onClick={this.props.open}>
-            <div></div>
+            <div />
           </NavLinkIcon>
         </NavLinkContainer>
       </NavContainer>
@@ -49,7 +65,7 @@ const NavContainer = styled.nav`
     align-items: center;
   }
 `;
-const NavLogoBox = styled.div`
+const NavLogoBox = styled(Link)`
   padding-left: 30px;
   div {
     display: inline-block;
@@ -75,7 +91,7 @@ const Search = styled.input.attrs((props) => ({
   border: none;
   border-bottom: 4px solid #ffd014;
 `;
-const SearchWrap = styled.a`
+const SearchWrap = styled(Link)`
   position: absolute;
   top: 50%;
   margin-top: -15px;
