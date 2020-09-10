@@ -16,6 +16,8 @@ class AsideNav extends Component {
     super();
     this.state = {
       close: false,
+      isLogin: false,
+      profileImg: "",
     };
   }
 
@@ -38,6 +40,29 @@ class AsideNav extends Component {
     });
   };
 
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://192.168.219.108:8001/users/getUser", {
+        method: "POST",
+        headers: {
+          authorization: token,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          // if (token) {
+          // this.setState({
+          //   isLogin: true,
+          //   profileImg: res.user_profile,
+          // });
+          // }
+        });
+    }
+  }
+
   render() {
     return (
       <div className="AsideNav">
@@ -55,9 +80,11 @@ class AsideNav extends Component {
                   src="https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg"
                 />
               </a>
+              (
               <Link to="/login" className="profileName">
                 로그인이 필요합니다.
               </Link>
+              )
               <a href="#" className="navClose" onClick={this.closeAside}>
                 <div></div>
               </a>
