@@ -9,8 +9,6 @@ export default class Main extends Component {
     super();
     this.state = {
       categories: [],
-      mainInfo: [],
-      offset: 0,
     };
   }
 
