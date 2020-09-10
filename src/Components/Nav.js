@@ -1,9 +1,25 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 
 class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      queryString: "",
+    };
+  }
+
+  handleText = (e) => {
+    this.setState({
+      queryString: e.target.value,
+    });
+  };
+
   render() {
+    const { queryString } = this.state;
+    const { open } = this.props;
+
     return (
       <NavContainer>
         <div>
@@ -11,8 +27,11 @@ class Nav extends Component {
             <div></div>
           </NavLogoBox>
           <SearchBox>
-            <Search placeholder="지역 또는 공간유형을 검색해보세요!"></Search>
-            <SearchWrap href="#">
+            <Search
+              placeholder="지역 또는 공간유형을 검색해보세요!"
+              onChange={this.handleText}
+            ></Search>
+            <SearchWrap to={`/searchresult?query=${queryString}`}>
               <div></div>
             </SearchWrap>
           </SearchBox>
@@ -24,7 +43,7 @@ class Nav extends Component {
           <Link>
             <a>공간 등록하기</a>
           </Link>
-          <NavLinkIcon onClick={this.props.open}>
+          <NavLinkIcon onClick={open}>
             <div></div>
           </NavLinkIcon>
         </NavLinkContainer>
@@ -33,12 +52,14 @@ class Nav extends Component {
   }
 }
 
+export default withRouter(Nav);
+
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 7;
   top: 0;
   height: 78px;
   width: 100%;
@@ -49,6 +70,7 @@ const NavContainer = styled.nav`
     align-items: center;
   }
 `;
+
 const NavLogoBox = styled.div`
   padding-left: 30px;
   div {
@@ -60,10 +82,12 @@ const NavLogoBox = styled.div`
     background-size: 684px 663px;
   }
 `;
+
 const SearchBox = styled.main`
   position: relative;
   margin-left: 115px;
 `;
+
 const Search = styled.input.attrs((props) => ({
   type: "text",
 }))`
@@ -75,7 +99,8 @@ const Search = styled.input.attrs((props) => ({
   border: none;
   border-bottom: 4px solid #ffd014;
 `;
-const SearchWrap = styled.a`
+
+const SearchWrap = styled(Link)`
   position: absolute;
   top: 50%;
   margin-top: -15px;
@@ -88,6 +113,7 @@ const SearchWrap = styled.a`
     height: 30px;
   }
 `;
+
 const NavLinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -100,6 +126,7 @@ const NavLinkContainer = styled.div`
     cursor: pointer;
   }
 `;
+
 const NavLinkIcon = styled.a`
   display: flex;
   justify-content: center;
@@ -115,5 +142,3 @@ const NavLinkIcon = styled.a`
     height: 22px;
   }
 `;
-
-export default Nav;

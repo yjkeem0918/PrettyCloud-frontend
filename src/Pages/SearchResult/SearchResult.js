@@ -3,62 +3,100 @@ import ResultFrame from "./ResultFrame";
 import PremiumZone from "./PremiumZone";
 import PlusZone from "./PlusZone";
 import NormalZone from "./NormalZone";
+import Nav from "../../Components/Nav";
 import "./SearchResult.scss";
 
 const LIMIT = 6;
 
 class SearchResult extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       premium: [],
       plus: [],
       normal: [],
       data: [],
-      queryString: "루프탑",
+      queryString: decodeURI(props.location.search.split("=")[1]),
       offset: 0,
     };
   }
+
   componentDidMount() {
+    this.getSearchData();
+    window.addEventListener("scroll", this.getData);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location.search !== this.props.location.search) {
+      this.setState(
+        {
+          queryString: decodeURI(this.props.location.search.split("=")[1]),
+        },
+        () => this.getSearchData()
+      );
+    }
+  }
+
+  getSearchData = () => {
+    const { queryString, offset } = this.state;
+    fetch(`http://192.168.219.106:8001/spaces/premium?search=${queryString}`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          premium: res.premiumClass,
+        });
+      });
+
+    fetch(`http://192.168.219.106:8001/spaces/plus?search=${queryString}`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          plus: res.plusClass,
+        });
+      });
+
     fetch(
-      `http://192.168.219.112:8001/spaces/search?search=${this.state.queryString}&offset=${this.state.offset}&limit=${LIMIT}`
+      `http://192.168.219.106:8001/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
     )
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          premium: res.premium,
-          plus: res.plus,
-          normal: res.normal,
-          // queryString: "촬영스튜디오",
-          offset: LIMIT + 6,
+          normal: res.normalClass,
+          offset: this.state.offset + LIMIT,
         });
       });
-    // window.addEventListener("scroll", this.handleScroll);
-  }
+  };
 
-  handleScroll = () => {
+  getData = () => {
+    const { queryString, offset, normal } = this.state;
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
-
     if (scrollTop + clientHeight >= scrollHeight) {
-      // fetch(
-      //   `http://192.168.219.107:8001/spaces/search?search=${this.state.queryString}&offset=${this.state.offset}&limit=${LIMIT}`
-      // )
-      //   .then((res) => res.json())
-      //   .then((res) => {
-      //     this.setState({
-      //       offset: LIMIT + 6,
-      //     });
-      //   });
+      fetch(
+        `http://192.168.219.106:8001/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          this.setState({
+            normal: normal.concat(res.normalClass),
+            offset: offset + LIMIT,
+          });
+        });
     }
   };
 
   render() {
-    const { premium, plus, normal } = this.state;
+    console.log(
+      "render. this.props.location.search >> ",
+      decodeURI(this.props.location.search.split("=")[1])
+    );
+
+    const { queryString, premium, plus, normal } = this.state;
     return (
       <div className="SearchResult">
-        <ResultFrame queryString={this.state.queryString} />
+        <Nav queryString={queryString} />
+        <ResultFrame queryString={queryString} />
         <PremiumZone premiumData={premium} />
         <PlusZone plusData={plus} />
         <NormalZone normalData={normal} />
