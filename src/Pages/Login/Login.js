@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../config";
 import "./Login.scss";
 
 class Login extends Component {
@@ -31,14 +32,15 @@ class Login extends Component {
   };
 
   handleLogin = () => {
-    fetch("http://192.168.219.112:8001/users/signin", {
+    const { email, pw } = this.state;
+    fetch(`${API}/users/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.pw,
+        email: email,
+        password: pw,
       }),
     })
       .then((res) => res.json())
@@ -57,9 +59,9 @@ class Login extends Component {
     const { email, pw, alertEmail } = this.state;
     return (
       <div className="Login">
-        <main>
+        <main className="loginContainer">
           <h1>로그인</h1>
-          <div className="loginContainer">
+          <div className="loginBox">
             <div className="socialLoginBox">
               <a href="#">네이버로 로그인</a>
               <a href="#" className="kakao">

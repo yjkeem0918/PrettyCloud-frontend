@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../config";
+import KaKaoLogin from "react-kakao-login";
 import "./SignUp.scss";
 
 class SignUp extends Component {
@@ -81,15 +83,18 @@ class SignUp extends Component {
   };
 
   handleSignUp = () => {
-    fetch("http://192.168.219.112:8001/users/signup", {
+    const { name, email, pw } = this.state;
+    fetch(`${API}/users/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.pw,
+        name: name,
+        email: email,
+        password: pw,
+        profile_url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToplStyx8pu0DsUkR-zSI6hAAN-vzcrZF0HA&usqp=CAU",
       }),
     })
       .then((res) => res.json())
@@ -97,7 +102,6 @@ class SignUp extends Component {
         if (res.message === "SUCCESS") {
           alert("회원가입이 완료되었습니다.");
           this.props.history.push("/login");
-          window.location.reload();
         } else {
           alert("회원가입에 실패하였습니다.");
         }
@@ -115,11 +119,22 @@ class SignUp extends Component {
       pwCheckAlert,
       checked,
     } = this.state;
+    const buttondisabled =
+      name &&
+      email &&
+      pw &&
+      alert &&
+      emailAlert &&
+      pwAlert &&
+      pwCheckAlert &&
+      checked
+        ? false
+        : true;
     return (
       <div className="SignUp">
-        <main>
+        <main className="signupContainer">
           <h1>회원가입</h1>
-          <div className="signupContainer">
+          <div className="signupBox">
             <div className="socialLoginBox">
               <a href="#">네이버로 로그인</a>
               <a href="#" className="kakao">
@@ -224,25 +239,9 @@ class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              {/* <Link to="/login"> */}
-              <button
-                onClick={this.handleSignUp}
-                disabled={
-                  name &&
-                  email &&
-                  pw &&
-                  alert &&
-                  emailAlert &&
-                  pwAlert &&
-                  pwCheckAlert &&
-                  checked
-                    ? false
-                    : true
-                }
-              >
-                회원가입{" "}
+              <button onClick={this.handleSignUp} disabled={buttondisabled}>
+                회원가입
               </button>
-              {/* </Link> */}
             </section>
           </div>
         </main>
