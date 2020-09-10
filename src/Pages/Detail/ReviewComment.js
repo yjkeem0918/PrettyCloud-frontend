@@ -6,22 +6,11 @@ class ReviewComment extends Component {
     return (
       <div className="ReviewComment">
         <div className="userCommentBox">
-          <div className="profileImg"></div>
+          {/* <div className="profileImg"></div> */}
           <div className="commentBox">
+            <div className="profileImg"></div>
             <div className="guestName">{this.props.userid}</div>
             <div className="userComment">{this.props.usercomment}</div>
-            <div className="dateTime">
-              <div className="date">{this.props.userdate}</div>
-              <div className="time">{this.props.usertime}</div>
-            </div>
-          </div>
-        </div>
-        <div className="hostCommentBox">
-          <div className="host">{this.props.userhost}</div>
-          <div className="hostComment">{this.props.hostcomment}</div>
-          <div className="dateTime">
-            <div className="date">{this.props.hostdate}</div>
-            <div className="time">{this.props.hosttime}</div>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const REFUND_DATA = [
 class Refund extends Component {
   render() {
     return (
-      <div className="Refund">
+      <div className="Refund" id="idRefund">
         <div className="refundInfoBox">
           <h4 className="refundHeader">환불규정 안내</h4>
           <div className="noticeRefund">

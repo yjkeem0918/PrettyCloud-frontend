@@ -14,9 +14,13 @@ class Detail extends Component {
     super();
 
     this.state = {
+      space_id: 0,
       header: "",
       subDescription: "",
       price: "",
+      time: 2,
+      num: 10,
+      imgUrl: [],
       spaceDesc: "",
       subHeader: "",
       tag: [],
@@ -26,35 +30,52 @@ class Detail extends Component {
       closed_day: "",
       spaceType: [],
       numValue: 1,
+      reservation: "",
+      amenities: [],
+      reviewNum: 2,
+      reviews: [],
+      selectDate: "",
+      selectStartTime: "",
+      selectEndTime: "",
+      totalNumber: "",
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/detail.json")
+    fetch("http://18.223.188.215:8000/spaces/detail/3")
       .then((res) => {
         return res.json();
       })
       .then((res) => {
         this.setState({
-          id: res.space.id,
-          header: res.space.title,
-          subDescription: res.space.subTitle,
-          tag: res.categories,
-          spaceIntro: res.space.description,
-          opening_hour: res.space.opening_hour,
-          closing_hour: res.space.closing_hour,
-          closed_day: res.space.closed_day,
-          price: res.space.fee,
-          precautions: res.space.precautions,
-          spaceDesc: res.space.description,
-          spaceType: res.categories,
-          refund_policy: res.space.refund_policy,
+          space_id: res.detail[0].id,
+          header: res.detail[0].title,
+          subDescription: res.detail[0].subTitle,
+          tag: res.detail[0].tags,
+          imgUrl: res.detail[0].imgUrl[0],
+          imgUrl1: res.detail[0].imgUrl[1],
+          spaceIntro: res.detail[0].description,
+          opening_hour: res.detail[0].opening_hour,
+          closing_hour: res.detail[0].closing_hour,
+          closed_day: res.detail[0].closed_day,
+          price: res.detail[0].fee,
+          num: res.detail[0].capacity,
+          time: res.detail[0].min_time,
+          precautions: res.detail[0].precautions,
+          spaceDesc: res.detail[0].description,
+          spaceType: res.detail[0].tags,
+          refund_policy: res.detail[0].refund_policy,
+          reviews: res.detail[0].Reviews,
+          reservation: res.detail[0].precautions,
+          amenities: res.detail[0].Amenities.map((el) => el.description),
+          reviewNum: res.detail[0].review_number,
         });
       });
   }
 
   addA = () => {
-    if (this.state.numValue >= 10) {
+    const { numValue } = this.state;
+    if (numValue >= 10) {
       alert("최대 인원은 10명 입니다.");
       return;
     }
@@ -67,15 +88,60 @@ class Detail extends Component {
       alert("최소 인원은 1명 입니다.");
       return;
     }
-    this.setState({ numValue: this.state.numValue - 1 });
+    this.setState({ numValue: numValue - 1 });
   };
 
+  handleDate = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleTime1 = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleTime2 = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleRbtn = () => {
+    const {
+      id,
+      selectDate,
+      selectStartTime,
+      selectEndTime,
+      numValue,
+    } = this.state;
+    fetch("http://192.168.219.108:8001/reservation/insert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        space_id: id,
+        date: selectDate.split(" ")[0],
+        start_time: selectStartTime.split(":")[0],
+        end_time: selectEndTime.split(":")[0],
+        people: numValue,
+        total_fee: 1,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  };
   render() {
+    // console.log(this.state.space_id);
+    // console.log(typeof this.state.selectDate);
     const {
       header,
       subDescription,
       tag,
+      imgUrl,
+      imgUrl1,
       price,
+      time,
       spaceDesc,
       spaceIntro,
       opening_hour,
@@ -83,6 +149,11 @@ class Detail extends Component {
       closed_day,
       spaceType,
       numValue,
+      reservation,
+      amenities,
+      num,
+      reviewNum,
+      reviews,
     } = this.state;
 
     return (
@@ -122,27 +193,35 @@ class Detail extends Component {
                   <div className="shopInfoBox">
                     <div className="shopInfo">
                       <input type="radio" className="radio" />
-                      <span className="shopName">전체공간</span>
+                      <span className="shopName">전체 공간</span>
                     </div>
                     <div className="priceTime">
-                      <div className="price">₩{price}</div>
+                      <div className="price">₩{Number(price)}</div>
                       <span className="time"> / 시간</span>
                     </div>
                   </div>
                   <div className="spaceInfoWrapper">
                     <div className="meetSpaceInfo">
-                      <div className="meetSpacePhoto"></div>
+                      <div className="meetSpacePhoto">
+                        <img
+                          src={imgUrl1}
+                          alt="subphoto"
+                          width="296"
+                          height="195"
+                        />
+                      </div>
                       <p className="meetSpaceDesc">{spaceDesc}</p>
-                      <DetailList spaceType={spaceType} />
+                      <DetailList spaceType={spaceType} time={time} num={num} />
                     </div>
                     <div className="selectReservation">
-                      <div className="select">날짜선택</div>
+                      <div className="select">날짜 선택</div>
                     </div>
                     <form className="selectDate">
                       <input
+                        onChange={this.handleDate}
+                        name="selectDate"
                         className="choose"
                         type="date"
-                        name="bday"
                         required
                         pattern="\d{4}-\d{2}-\d{2}"
                       ></input>
@@ -154,10 +233,12 @@ class Detail extends Component {
                       </p>
                     </form>
                     <div className="selectTime">
-                      <div className="select">시간선택</div>
+                      <div className="select">시간 선택</div>
                     </div>
                     <div className="chooseTime">
                       <input
+                        onChange={this.handleTime1}
+                        name="selectStartTime"
                         className="timeInput"
                         type="time"
                         min="09:00"
@@ -166,6 +247,8 @@ class Detail extends Component {
                       ></input>
                       <div className="wave">~</div>
                       <input
+                        onChange={this.handleTime2}
+                        name="selectEndTime"
                         className="timeInput"
                         type="time"
                         min="09:00"
@@ -178,22 +261,22 @@ class Detail extends Component {
                     </div>
                     <div className="numBox">
                       <div onClick={this.subtractA} className="btnMinus"></div>
-                      <input
-                        className="numberSet"
-                        value={numValue}
-                        type="text"
-                      ></input>
+                      <div className="numberSet">{numValue}</div>
                       <div onClick={this.addA} className="btnPlus"></div>
                     </div>
                   </div>
                   <div className="reservationButtonBox">
-                    <p className="reservationButton">바로 예약하기</p>
+                    <p onClick={this.handleRbtn} className="reservationButton">
+                      바로 예약하기
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="photoWrapper">
-              <div className="mainPhoto"></div>
+              <div className="mainPhoto">
+                <img src={imgUrl} alt="mainphoto" width="773" height="450" />
+              </div>
               <div className="textBox">
                 <h3 className="textBoxHeader">{subDescription}</h3>
               </div>
@@ -205,10 +288,10 @@ class Detail extends Component {
               closingHour={closing_hour}
               closed_day={closed_day}
             />
-            <Facility />
-            <Reservation />
+            <Facility facilityData={amenities} />
+            <Reservation reservationData={reservation} />
             <Refund />
-            <Review />
+            <Review reviewNum={reviewNum} reviews={reviews} />
           </div>
         </div>
       </div>

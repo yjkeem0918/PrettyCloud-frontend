@@ -53,12 +53,12 @@
             .heart {
               width: 22px;
               height: 22px;
+              cursor: pointer;
             }
           }
         }
         .spaceBox {
           .respondInfos {
-            // display: block;
             padding: 19px 20px 17px;
             background-color: #fff;
             text-align: center;
@@ -116,6 +116,7 @@
                   // position: relative;
                 }
                 .meetSpaceDesc {
+                  margin-top: 10px;
                   padding: 20px 0;
                   line-height: 1.4;
                 }
@@ -187,6 +188,7 @@
               .numBox {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 height: 50px;
                 border: 1px solid #e0e0e0;
                 margin: 30px 0;
@@ -240,10 +242,7 @@
     .photoWrapper {
       width: 773px;
       .mainPhoto {
-        background-image: url(https://moplqfgeemqv2103108.cdn.ntruss.com/service/159206933_acac9bce809e66fec356f3973295c857.jpg?type=m&w=900&h=900&autorotate=true&quality=90);
         height: 450px;
-        background-size: cover;
-        background-position: 50%;
       }
       .textBox {
         border-top: 1px solid #f6f6f6;

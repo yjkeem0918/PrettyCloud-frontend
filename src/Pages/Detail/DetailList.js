@@ -7,13 +7,13 @@ class DetailList extends Component {
 
     this.state = {
       spaceType: ["파티룸", "카페", "촬영스튜디오"],
-      time: "최소 2시간 부터",
-      num: "최소 2명 ~ 최대 10명",
+      time: 2,
+      num: 30,
       reser: "4명 초과시 5,000원/인",
     };
   }
   render() {
-    const { spaceType } = this.props;
+    const { spaceType, time, num } = this.props;
 
     return (
       <div className="DetailList">
@@ -26,15 +26,11 @@ class DetailList extends Component {
           </li>
           <li className="lists">
             <span className="listTitle">예약시간</span>
-            <span className="data">{this.state.time}</span>
+            <span className="data">최소 {time} 시간 부터</span>
           </li>
           <li className="lists">
             <span className="listTitle">수용인원</span>
-            <span className="data">{this.state.num}</span>
-          </li>
-          <li className="lists">
-            <span className="listTitle">예약기준</span>
-            <span className="data">{this.state.reser}</span>
+            <span className="data">최소 2명 ~ 최대 {num}명</span>
           </li>
         </ul>
       </div>
