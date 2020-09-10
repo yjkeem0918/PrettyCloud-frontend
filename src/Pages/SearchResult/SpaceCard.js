@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SpaceCard.scss";
+import { Link } from "react-router-dom";
 
 class SpaceCard extends Component {
   render() {
@@ -16,14 +17,17 @@ class SpaceCard extends Component {
     return (
       <div className="SpaceCard">
         <div className="imageContainer">
-          <img
-            alt="previewImage"
-            className="spaceImg"
-            src={img}
-            onClick={() => {
-              this.props.history.push(`/detail/${this.props.id}`); //은별님 routes에다가 id 추가해야한다
-            }}
-          />
+          <Link to={`/detail/${this.props.key}`}>
+            <img
+              alt="previewImage"
+              className="spaceImg"
+              src={img}
+              // onClick={() => {
+              //   this.props.history.push(`/detail/${this.props.id}`);
+              // }}
+            />
+          </Link>
+
           <div
             className={
               paymentType === 1 ? "immediateContainer" : "acceptContainer"

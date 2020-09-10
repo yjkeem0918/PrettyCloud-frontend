@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import AsideNav from "../../Components/AsideNav";
 import ResultFrame from "./ResultFrame";
 import PremiumZone from "./PremiumZone";
 import PlusZone from "./PlusZone";
 import NormalZone from "./NormalZone";
-import Nav from "../../Components/Nav";
+
 import "./SearchResult.scss";
 
 const LIMIT = 6;
@@ -39,12 +40,17 @@ class SearchResult extends Component {
 
   getSearchData = () => {
     const { queryString, offset } = this.state;
+    console.log(
+      "이거>>>>>>>>>>>>>>>",
+      `http://192.168.219.106:8001/spaces/plus?search=${queryString}`
+    );
     fetch(`http://192.168.219.106:8001/spaces/premium?search=${queryString}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           premium: res.premiumClass,
         });
+        console.log("프리미엄존>>>>", this.state.premium);
       });
 
     fetch(`http://192.168.219.106:8001/spaces/plus?search=${queryString}`)
@@ -53,6 +59,7 @@ class SearchResult extends Component {
         this.setState({
           plus: res.plusClass,
         });
+        console.log("플러스존>>>>>>", this.state.plus);
       });
 
     fetch(
@@ -64,6 +71,7 @@ class SearchResult extends Component {
           normal: res.normalClass,
           offset: this.state.offset + LIMIT,
         });
+        console.log("노멀존>>>>>", this.state.normal);
       });
   };
 
@@ -72,6 +80,7 @@ class SearchResult extends Component {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
+
     if (scrollTop + clientHeight >= scrollHeight) {
       fetch(
         `http://192.168.219.106:8001/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
@@ -87,15 +96,10 @@ class SearchResult extends Component {
   };
 
   render() {
-    console.log(
-      "render. this.props.location.search >> ",
-      decodeURI(this.props.location.search.split("=")[1])
-    );
-
     const { queryString, premium, plus, normal } = this.state;
     return (
       <div className="SearchResult">
-        <Nav queryString={queryString} />
+        <AsideNav />
         <ResultFrame queryString={queryString} />
         <PremiumZone premiumData={premium} />
         <PlusZone plusData={plus} />
