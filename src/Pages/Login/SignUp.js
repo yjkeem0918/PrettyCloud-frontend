@@ -101,7 +101,7 @@ class SignUp extends Component {
       .then((res) => {
         if (res.message === "SUCCESS") {
           alert("회원가입이 완료되었습니다.");
-          this.props.history.push("/login");
+          this.props.history.push("/");
         } else {
           alert("회원가입에 실패하였습니다.");
         }

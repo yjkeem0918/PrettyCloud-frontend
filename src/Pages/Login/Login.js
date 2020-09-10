@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import API from "../../config";
 import "./Login.scss";
+import AsideNav from "../../Components/AsideNav";
 
 class Login extends Component {
   constructor() {
@@ -48,7 +49,7 @@ class Login extends Component {
         console.log(res);
         if (res.token) {
           localStorage.setItem("token", res.token);
-          this.props.history.push("./");
+          this.props.history.push("./signup");
           alert("로그인 성공했습니다.");
         } else {
           alert("이메일 또는 비밀번호를 확인하세요.");
@@ -60,6 +61,7 @@ class Login extends Component {
     const { email, pw, alertEmail } = this.state;
     return (
       <div className="Login">
+        <AsideNav />
         <main className="loginContainer">
           <h1>로그인</h1>
           <div className="loginBox">
