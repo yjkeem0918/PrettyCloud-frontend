@@ -8,23 +8,31 @@ export default class RecommendSpace extends Component {
   };
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/Data/recommendation.json")
-      .then((res) => res.json)
+    fetch("http://18.223.188.215:8000/spaces/recommendation")
+      .then((res) => res.json())
       .then((res) => {
-        this.setState = {
-          recommendation: res,
-        };
+        this.setState({
+          recommendation: res.recommendation,
+        });
       });
   };
 
   render() {
-    console.log(this.state.recommendation.title);
     return (
       <div className="RecommendSpace">
         {this.state.recommendation.map((el) => {
           return (
-            <li>
-              <SpaceCard title={el.title} tag={el.tags} address={el.address} />
+            <li className="spaceCard">
+              <SpaceCard
+                imgUrl={el.imgUrl}
+                title={el.title}
+                address={el.address}
+                tags={el.tags}
+                fee={el.fee}
+                capacity={el.capacity}
+                reviewNumber={el.review_number}
+                likeNumber={el.like_number}
+              />
             </li>
           );
         })}

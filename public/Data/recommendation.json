@@ -27,10 +27,8 @@
         "레저시설",
         "한옥"
       ],
-      "imgUrl": [
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/service/156439005_6bade8110601de30c47dd51084ffc663.JPG?type=m&w=900&h=900&autorotate=true&quality=90",
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/pstatic-scloud/20180905_266/1536078941207CLidV_JPEG/IMG_2393.JPG?type=m&w=900&h=900&autorotate=true&quality=90"
-      ]
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/pstatic-scloud/20180905_266/1536078941207CLidV_JPEG/IMG_2393.JPG?type=m&w=900&h=900&autorotate=true&quality=90",
+      "review": "바닥도 좋고 홀도 꽤 넓어요. 근데 바닥에 머리카락이 너무너무 많아서 청소기가 있길래 청소 한 번 하고 썼어요 ㅎㅎㅎ"
     },
     {
       "id": 2,
@@ -59,10 +57,8 @@
         "독립오피스",
         "할인"
       ],
-      "imgUrl": [
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109857_82d420e76696af8d13cf1f2fc5df1e34.jpeg?type=m&w=900&h=900&autorotate=true&quality=90",
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109861_4d461aba39bbba33bbfae8497f5c491a.jpeg?type=m&w=900&h=900&autorotate=true&quality=90"
-      ]
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109861_4d461aba39bbba33bbfae8497f5c491a.jpeg?type=m&w=900&h=900&autorotate=true&quality=90",
+      "review": "깔끔하고 깨끗한이미지 좋아요, 깔끔하고 깨끗한이미지 좋아요"
     },
     {
       "id": 3,
@@ -91,10 +87,8 @@
         "카페",
         "작업실"
       ],
-      "imgUrl": [
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159107274_e74e12f395385faea86078f03322cf7b.jpg?type=m&w=900&h=900&autorotate=true&quality=90",
-        "https://moplqfgeemqv2103108.cdn.ntruss.com/service/158874252_7474a853cc005b0149bb561bf16dc905.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
-      ]
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/158874252_7474a853cc005b0149bb561bf16dc905.jpg?type=m&w=900&h=900&autorotate=true&quality=90",
+      "review": "너무 좋아요. 인테리어도 깔끔하고.근데 화장실이 좀 ㅠㅠ 들어갔더니 날벌레들이 너무 많아서 그냥 나왔어요.화장실만 청결해지면 좋겠어요"
     }
   ]
 }

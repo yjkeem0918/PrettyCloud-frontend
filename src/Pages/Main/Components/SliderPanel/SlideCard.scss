@@ -1,5 +1,5 @@
-.SlidePanel {
-  .container {
+.SlideCard {
+  .slideContainer {
     margin-top: 78px;
     width: 100%;
     height: 450px;
@@ -7,11 +7,11 @@
     background-image: url(https://kr.object.ncloudstorage.com/scloud-service/service/159281061_a2dd593a8f8234e2b8c715f61e58d6bd.png);
     background-size: cover;
 
-    .slidPanelImg {
+    .slidCardImg {
       object-fit: cover;
     }
 
-    .slidePanelText {
+    .slideCardText {
       font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
         Helvetica, Apple SD Gothic Neo, Sans-serif !important;
       padding-top: 100px;
@@ -19,18 +19,18 @@
       margin-right: 317px;
       height: 100%;
 
-      .smallText {
+      .cardTitle {
         color: rgb(255, 255, 255);
         text-decoration: underline;
       }
 
-      .bigText {
+      .cardDescription {
         color: rgb(255, 255, 255);
         font-size: 48px;
         margin-top: 20px;
       }
 
-      .slidePanelBtn {
+      .slideCardBtn {
         font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
           Helvetica, Apple SD Gothic Neo, Sans-serif !important;
         color: #ffd014;

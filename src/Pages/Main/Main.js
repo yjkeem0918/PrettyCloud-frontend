@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import SlidePanel from "./Components/SlidePanel";
+import SlidePanel from "./Components/SliderPanel/SliderPanel";
 import RecommendSpace from "./Components/RecommendSpace/RecommendSpace";
-import SearchCard from "../SearchResult/SpaceCard";
-import UserReview from "./UserReview/UserReview";
+import UserReview from "./Components/UserReview/UserReview";
 import "./Main.scss";
 
 export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      mainSlider: [],
       categories: [],
       mainInfo: [],
       offset: 0,
@@ -17,7 +15,7 @@ export default class Main extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/Data/categories.json")
+    fetch("http://18.223.188.215:8000/spaces/categories")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -30,7 +28,7 @@ export default class Main extends Component {
     return (
       <div className="Main">
         <section className="mainSlider">
-          <SlidePanel mainSlider={this.state.mainSlider} />
+          <SlidePanel />
         </section>
 
         <section className="searchSpace">
@@ -50,6 +48,7 @@ export default class Main extends Component {
             <RecommendSpace />
           </div>
         </section>
+
         <section className="userReview">
           <p className="mainSubTitle">이용자 리뷰</p>
           <p className="titleContent">생생한 후기를 만나보세요</p>

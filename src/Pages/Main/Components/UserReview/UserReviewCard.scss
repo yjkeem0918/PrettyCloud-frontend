@@ -1,4 +1,4 @@
-.UserReview {
+.UserReviewCard {
   .reviewImg {
     width: 355px;
     height: 235px;
@@ -10,7 +10,8 @@
   }
   .reviewContents {
     .reviewTag {
-      .review {
+      display: flex;
+      .tags {
         line-height: 22px;
         font-size: 12px;
         color: #704de4;
@@ -19,6 +20,11 @@
         padding: 0 8px;
         margin: 0 4px 3px 0;
       }
+    }
+    .reviewTitle {
+      font-size: 21px;
+      padding-top: 6px;
+      padding-bottom: 5px;
     }
   }
 }
