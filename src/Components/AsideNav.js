@@ -55,10 +55,8 @@ class AsideNav extends Component {
                   src="https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg"
                 />
               </a>
-              <Link to="/login">
-                <a href="#" className="profileName">
-                  로그인이 필요합니다.
-                </a>
+              <Link to="/login" className="profileName">
+                로그인이 필요합니다.
               </Link>
               <a href="#" className="navClose" onClick={this.closeAside}>
                 <div></div>

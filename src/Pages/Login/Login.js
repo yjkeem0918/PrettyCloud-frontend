@@ -67,7 +67,7 @@ class Login extends Component {
                 <a>비밀번호 찾기</a>
               </div>
               <Link to="/main">
-              <button>이메일로 로그인</button>
+                <button>이메일로 로그인</button>
               </Link>
               <p>
                 아직 스페이스클라우드 회원이 아니신가요?
