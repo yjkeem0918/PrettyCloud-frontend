@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import API from "../../config";
+// import API from "../../config";
 import "./Login.scss";
 
 class Login extends Component {
@@ -33,7 +33,7 @@ class Login extends Component {
 
   handleLogin = () => {
     const { email, pw } = this.state;
-    fetch(`${API}/users/signin`, {
+    fetch("http://192.168.219.108:8001/users/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +45,7 @@ class Login extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         if (res.token) {
           localStorage.setItem("token", res.token);
           this.props.history.push("./");
