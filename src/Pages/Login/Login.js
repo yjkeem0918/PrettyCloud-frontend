@@ -24,6 +24,7 @@ class Login extends Component {
       alertEmail: this.state.email.includes("@" && ".com") ? true : false,
     });
   };
+  
   render() {
     return (
       <div className="Login">
