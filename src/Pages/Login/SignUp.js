@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../config";
 import "./SignUp.scss";
 
 class SignUp extends Component {
@@ -25,7 +26,6 @@ class SignUp extends Component {
     this.setState({
       name: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkName = (e) => {
@@ -38,7 +38,6 @@ class SignUp extends Component {
     this.setState({
       email: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkEmail = () => {
@@ -57,14 +56,12 @@ class SignUp extends Component {
     this.setState({
       pwAlert: this.state.pw.length > 5 ? true : false,
     });
-    console.log(this.state.pw);
   };
 
   handleCheckPw = (e) => {
     this.setState({
       pwCheck: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   testPw = (e) => {
@@ -84,12 +81,59 @@ class SignUp extends Component {
     });
   };
 
+  handleSignUp = () => {
+    const { name, email, pw } = this.state;
+    fetch(`${API}/users/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: pw,
+        profile_url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToplStyx8pu0DsUkR-zSI6hAAN-vzcrZF0HA&usqp=CAU",
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.message === "SUCCESS") {
+          alert("회원가입이 완료되었습니다.");
+          this.props.history.push("/");
+        } else {
+          alert("회원가입에 실패하였습니다.");
+        }
+      });
+  };
+
   render() {
+    const {
+      name,
+      email,
+      pw,
+      alert,
+      emailAlert,
+      pwAlert,
+      pwCheckAlert,
+      checked,
+    } = this.state;
+    const buttondisabled =
+      name &&
+      email &&
+      pw &&
+      alert &&
+      emailAlert &&
+      pwAlert &&
+      pwCheckAlert &&
+      checked
+        ? false
+        : true;
     return (
       <div className="SignUp">
-        <main>
+        <main className="signupContainer">
           <h1>회원가입</h1>
-          <div className="signupContainer">
+          <div className="signupBox">
             <div className="socialLoginBox">
               <a href="#">네이버로 로그인</a>
               <a href="#" className="kakao">
@@ -110,7 +154,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkName}
                   onChange={this.handleName}
                 />
-                <div className={this.state.alert ? "hiddenAlert" : "alert"}>
+                <div className={alert ? "hiddenAlert" : "alert"}>
                   닉네임은 두 글자 이상(특수문자 입력 불가) 입력해주세요.
                 </div>
                 <input
@@ -118,9 +162,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkEmail}
                   onChange={this.handleEmail}
                 />
-                <div
-                  className={this.state.emailAlert ? "hiddenAlert" : "alert"}
-                >
+                <div className={emailAlert ? "hiddenAlert" : "alert"}>
                   이메일 형식이 유효하지 않습니다.
                 </div>
                 <input
@@ -129,7 +171,7 @@ class SignUp extends Component {
                   onKeyUp={this.checkPw}
                   onChange={this.handlePw}
                 />
-                <div className={this.state.pwAlert ? "hiddenAlert" : "alert"}>
+                <div className={pwAlert ? "hiddenAlert" : "alert"}>
                   비밀번호가 너무 짧습니다.
                 </div>
                 <input
@@ -138,9 +180,7 @@ class SignUp extends Component {
                   onChange={this.handleCheckPw}
                   onKeyUp={this.testPw}
                 />
-                <div
-                  className={this.state.pwCheckAlert ? "hiddenAlert" : "alert"}
-                >
+                <div className={pwCheckAlert ? "hiddenAlert" : "alert"}>
                   입력하신 비밀번호와 동일하게 입력해주세요.
                 </div>
               </div>
@@ -150,7 +190,7 @@ class SignUp extends Component {
                     type="checkbox"
                     id="a1"
                     onClick={this.handleAllCheckbox}
-                    checked={this.state.checked}
+                    checked={checked}
                   />
                   <label for="a1"> </label>
                   <span>아래 약관에 모두 동의합니다.</span>
@@ -198,9 +238,9 @@ class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              <Link to="/login">
-                <button>회원가입</button>
-              </Link>
+              <button onClick={this.handleSignUp} disabled={buttondisabled}>
+                회원가입
+              </button>
             </section>
           </div>
         </main>

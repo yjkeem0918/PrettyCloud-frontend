@@ -2,14 +2,14 @@
 .Login {
   background-color: #f6f6f6;
   height: 100vh;
-  padding-top: 120px;
-  main {
-    h1 {
+  .loginContainer {
+    .loginTitle {
+      padding-top: 120px;
       font-size: 34px;
       font-weight: bold;
       text-align: center;
     }
-    .loginContainer {
+    .loginBox {
       width: 648px;
       padding: 32px;
       margin: 0 auto;

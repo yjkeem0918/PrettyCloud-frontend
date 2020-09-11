@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../config";
 import "./Login.scss";
 import AsideNav from "../../Components/AsideNav";
 
@@ -8,6 +9,7 @@ class Login extends Component {
     super();
     this.state = {
       email: "",
+      pw: "",
       alertEmail: true,
     };
   }
@@ -16,7 +18,6 @@ class Login extends Component {
     this.setState({
       email: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   checkEmail = () => {
@@ -25,13 +26,44 @@ class Login extends Component {
     });
   };
 
+  handlePw = (e) => {
+    this.setState({
+      pw: e.target.value,
+    });
+  };
+
+  handleLogin = () => {
+    const { email, pw } = this.state;
+    fetch(`${API}/users/signin`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: pw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        if (res.token) {
+          localStorage.setItem("token", res.token);
+          this.props.history.push("./signup");
+          alert("로그인 성공했습니다.");
+        } else {
+          alert("이메일 또는 비밀번호를 확인하세요.");
+        }
+      });
+  };
+
   render() {
+    const { email, pw, alertEmail } = this.state;
     return (
       <div className="Login">
-        <AsideNav />
-        <main>
-          <h1>로그인</h1>
-          <div className="loginContainer">
+        <main className="loginContainer">
+          <h1 className="loginTitle">로그인</h1>
+          <div className="loginBox">
             <div className="socialLoginBox">
               <a href="#">네이버로 로그인</a>
               <a href="#" className="kakao">
@@ -50,15 +82,14 @@ class Login extends Component {
                   onChange={this.handleEmail}
                   onKeyUp={this.checkEmail}
                 />
-                <div
-                  className={this.state.alertEmail ? "hiddenAlert" : "alert"}
-                >
+                <div className={alertEmail ? "hiddenAlert" : "alert"}>
                   이메일 형식이 유효하지 않습니다.
                 </div>
                 <input
                   className="password"
                   type="password"
                   placeholder="비밀번호"
+                  onChange={this.handlePw}
                 />
               </div>
               <div className="buttonBox">
@@ -69,14 +100,15 @@ class Login extends Component {
                 </div>
                 <a>비밀번호 찾기</a>
               </div>
-              <Link to="/main">
-                <button>이메일로 로그인</button>
-              </Link>
+              <button
+                onClick={this.handleLogin}
+                disabled={email && pw.length > 5 && alertEmail ? false : true}
+              >
+                이메일로 로그인
+              </button>
               <p>
                 아직 스페이스클라우드 회원이 아니신가요?
-                <Link to="/signUp">
-                  <a href="#">회원가입</a>
-                </Link>
+                <Link to="/signUp">회원가입</Link>
               </p>
             </section>
           </div>
