@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../config";
 import "./SignUp.scss";
+import AsideNav from "../../Components/AsideNav";
 
 class SignUp extends Component {
   constructor() {
@@ -131,6 +132,7 @@ class SignUp extends Component {
         : true;
     return (
       <div className="SignUp">
+        <AsideNav />
         <main className="signupContainer">
           <h1>회원가입</h1>
           <div className="signupBox">
