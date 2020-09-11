@@ -1,51 +1,72 @@
 import React, { Component } from "react";
 import "./SpaceCard.scss";
+import { Link } from "react-router-dom";
 
 class SpaceCard extends Component {
   render() {
+    const {
+      img,
+      paymentType,
+      title,
+      address,
+      fee,
+      capacity,
+      review,
+      like,
+    } = this.props;
     return (
       <div className="SpaceCard">
         <div className="imageContainer">
-          <img alt="previewImage" src="/images/space.jpeg" />
+          <Link to={`/detail/${this.props.key}`}>
+            <img alt="previewImage" className="spaceImg" src={img} />
+          </Link>
+
+          <div
+            className={
+              paymentType === 1 ? "immediateContainer" : "acceptContainer"
+            }
+          >
+            <span className={paymentType === 1 ? "isImmediate" : "isAccept"}>
+              {paymentType === 1 ? "바로결제" : "승인결제"}
+            </span>
+          </div>
         </div>
 
         <div className="infoContainer">
-          <span className="name">2만원할인_루프탑 파티룸 빛나는별</span>
+          <span className="name">{title}</span>
 
           <div className="locationBox">
             <div className="locationWrapper">
               <div className="icon" />
-              <span className="location">연남동</span>
+              <span className="location">{address}</span>
               <div className="bar" />
             </div>
             <div className="tagWrapper">
-              <span>#파티룸</span>
-              <span>#루프탑</span>
-              <span>#홍대</span>
-              <span>#데이트</span>
-              <span>#연남동</span>
+              {this.props.tag.map((el) => (
+                <span className="tag">#{el}</span>
+              ))}
             </div>
           </div>
 
           <div className="priceNumberBox">
             <div className="priceWrapper">
-              <span className="price">20,000</span>
+              <span className="price">{fee}</span>
               <span className="unit">원/시간</span>
             </div>
             <div className="numberWrapper">
               <div className="maxUserBox">
                 <div className="userIcon"></div>
                 <span className="max">최대</span>
-                <span className="max">8</span>
+                <span className="max">{capacity}</span>
                 <span className="user">인</span>
               </div>
               <div className="replyBox">
                 <div className="replyIcon"></div>
-                <span className="reply">0</span>
+                <span className="reply">{review}</span>
               </div>
               <div className="likesBox">
                 <div className="likesIcon"></div>
-                <span className="likes">28</span>
+                <span className="likes">{like}</span>
               </div>
             </div>
           </div>

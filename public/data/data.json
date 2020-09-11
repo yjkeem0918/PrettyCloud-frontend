@@ -1,64 +1,239 @@
 {
-  "Spaces": [
+  "premium": [
     {
-      "spaceId": 1,
-      "imgUrl": "",
-      "title": "루프탑바베큐 아일랜드이너프 연남점",
-      "location": "연남동",
-      "categories": ["서울파티룸", "연남파티룸", "바베큐", "워크샵", "루프탑"], //해시태그
-      "fee": 150000,
-      "capacity": 40, //최대인원
-      "commentNumber": 0,
-      "likeNumber": 65,
-      "avgRating": 4.2,
-      "review": "",
-      "payemntType": , // 1: 바로결제, 2:승인결제
-      "classType": 1 // 1:프리미엄, 2:플러스, 3:일반
+      "id": 1,
+      "title": "홍대 파티룸 홀라루프[매일소독]",
+      "address": "중랑",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 1,
+      "categories": [
+        "루프탑",
+        "촬영스튜디오",
+        "엠티장소",
+        "브라이덜샤워",
+        "회의실",
+        "세미나실"
+      ],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/156439005_6bade8110601de30c47dd51084ffc663.JPG?type=m&w=900&h=900&autorotate=true&quality=90"
     },
     {
-      "spaceId": 2,
-      "imgUrl": "",
-      "title": "[홍대나누기]홍대7번루프탑New",
-      "location": "동교동",
-      "categories": ["루프탑", "브라이덜샤워", "생일파티", "파티룸", "공간대여"], //해시태그
-      "fee": 30000,
-      "capacity": 15, //최대인원
-      "commentNumber": 0,
-      "likeNumber": 78,
-      "avgRating": 4.4,
-      "review": "",
-      "payemntType": 2, // 1: 바로결제, 2:승인결제
-      "classType": 1 // 1:프리미엄, 2:플러스, 3:일반
+      "id": 2,
+      "title": "[소모임특가]경복궁뷰 루프탑탁트인",
+      "address": "종로",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 1,
+      "categories": [
+        "다목적홀",
+        "공연장",
+        "코워킹스페이스",
+        "스터디룸",
+        "연습실",
+        "파티룸"
+      ],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159109857_82d420e76696af8d13cf1f2fc5df1e34.jpeg?type=m&w=900&h=900&autorotate=true&quality=90"
     },
     {
-        "spaceId": 3,
-        "imgUrl": "",
-        "title": "지붕이 열리는 홍대루프탑[해돌]",
-        "location": "서교동",
-        "categories": ["생맥주무제한파티", "바베큐", "홍대루프탑", "단체모임/기업회식", "스몰웨딩/작은결혼식"], //해시태그
-        "fee": 110000,
-        "capacity": 100, //최대인원
-        "commentNumber": 0,
-        "likeNumber": 106,
-        "avgRating": 4.4,
-        "review": "",
-        "payemntType": 2, // 1: 바로결제, 2:승인결제
-        "classType": 2// 1:프리미엄, 2:플러스, 3:일반
-      },
-      {
-        "spaceId": 4,
-        "imgUrl": "",
-        "title": "하늘밑, [매일 소독중]",
-        "location": "청파동 1가",
-        "categories": ["루프탑", "이벤트", "생일파티", "바베큐", "촬영"], //해시태그
-        "fee": 10000,
-        "capacity": 6, //최대인원
-        "commentNumber": 119,
-        "likeNumber": 868,
-        "avgRating": 4.2,
-        "review": "",
-        "payemntType": 2, // 1: 바로결제, 2:승인결제
-        "classType": 2 // 1:프리미엄, 2:플러스, 3:일반
-      }
+      "id": 3,
+      "title": "당산 슬로우버드 보헤미안 파티룸",
+      "address": "영등포",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 1,
+      "categories": [
+        "카페",
+        "레저시설",
+        "독립오피스",
+        "작업실",
+        "한옥",
+        "할인"
+      ],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159107274_e74e12f395385faea86078f03322cf7b.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 4,
+      "title": "[자연광 스튜디오]꽃,흐드러질즈음",
+      "address": "서대문",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 1,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/158874253_859ad15b02550a0fedac38de59be86e8.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    }
+  ],
+  "plus": [
+    {
+      "id": 13,
+      "title": "슈퍼스타트 강남점",
+      "address": "강남",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 2,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159897230_c5cbb749b3db007c7de7575da6670c73.png?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 14,
+      "title": "대학로,작업공간 섬,8명 인원제한",
+      "address": "종로",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 2,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159897222_fbbf6df35dfe6fdfdf78411c8d77f5e8.JPG?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 15,
+      "title": "사당역 파티룸 [오션스타] 40평",
+      "address": "서초",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 2,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159897227_6b137b54e61d420f1ce4122068481359.JPG?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 16,
+      "title": "신촌파티룸 미드나잇 방역철저",
+      "address": "서대문",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 2,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/158737422_d5f4c65f41655a0b93f2967769c93d08.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 17,
+      "title": "강남역, 역삼역 [강남일등파티]",
+      "address": "강남",
+      "fee": "10000.0000",
+      "capacity": 30,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 1,
+      "class_type_id": 2,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/156285000_156005c5baf40ff51a327f1c34f2975b.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    }
+  ],
+  "normal": [
+    {
+      "id": 26,
+      "title": "모락(MORAK) 서울대입구점",
+      "address": "관악",
+      "fee": "15000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159616734_f603942a97c4bc6f1252851a60b05347.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 27,
+      "title": "[홍대역 10초]디쿤스트 연습실",
+      "address": "마포",
+      "fee": "15000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159616737_9469ceed33cca33a275b9a1d92ab67f8.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 28,
+      "title": "강남역 루프탑 파티룸 BBQ엠티",
+      "address": "강남",
+      "fee": "30000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159564842_27d72031dca84470dac06e28998b913a.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 29,
+      "title": "위드램 WEEDRAM Bar",
+      "address": "마포",
+      "fee": "220000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/159564845_bb3a484811707e57335a605483402634.jpg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 30,
+      "title": "(신규오픈)잠실새내플레이스EM블루",
+      "address": "송파",
+      "fee": "18000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/158850529_ea571676ce9b75b0730a5d56350ae93e.jpeg?type=m&w=900&h=900&autorotate=true&quality=90"
+    },
+    {
+      "id": 31,
+      "title": "메가오피스 서초센터 2인실(내측)",
+      "address": "서초",
+      "fee": "440000.0000",
+      "capacity": 40,
+      "review_number": 2,
+      "like_number": 2,
+      "avg_rating": "4.0",
+      "payment_type_id": 2,
+      "class_type_id": 3,
+      "categories": [],
+      "imgUrl": "https://moplqfgeemqv2103108.cdn.ntruss.com/service/157015296_d3b5541960b408107507a1825fd12b16.jpeg?type=m&w=900&h=900&autorotate=true&quality=90"
+    }
   ]
 }

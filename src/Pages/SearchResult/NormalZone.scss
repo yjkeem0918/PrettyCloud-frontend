@@ -4,8 +4,13 @@
   padding-bottom: 50px;
 
   .NormalZoneContainer {
-    display: flex;
     margin: 0 auto;
     width: 1209px;
+
+    .NormalZoneBox {
+      display: flex;
+      flex-wrap: wrap;
+      width: 1250px;
+    }
   }
 }
