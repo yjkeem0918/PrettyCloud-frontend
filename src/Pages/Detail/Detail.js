@@ -9,6 +9,8 @@ import Reservation from "./Reservation";
 import Refund from "./Refund";
 import Review from "./Review";
 import API from "../../config";
+import Footer from "../../Components/Footer";
+import { Link } from "react-router-dom";
 import "./Detail.scss";
 
 class Detail extends Component {
@@ -47,6 +49,7 @@ class Detail extends Component {
     const { space_id } = this.state;
     //console.log(this.props.match.params);
     //   console.dir(this.props.location.search);
+    console.log(API);
     fetch(`${API}/spaces/detail/${this.props.match.params.id}`)
       .then((res) => {
         return res.json();
@@ -123,7 +126,7 @@ class Detail extends Component {
         authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify({
-        space_id: id,
+        space_id: this.state.space_id,
         date: selectDate.split(" ")[0],
         start_time: selectStartTime.split(":")[0],
         end_time: selectEndTime.split(":")[0],
@@ -268,9 +271,14 @@ class Detail extends Component {
                     </div>
                   </div>
                   <div className="reservationButtonBox">
-                    <p onClick={this.handleRbtn} className="reservationButton">
-                      바로 예약하기
-                    </p>
+                    <Link to="/reservationlist">
+                      <p
+                        onClick={this.handleRbtn}
+                        className="reservationButton"
+                      >
+                        바로 예약하기
+                      </p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -296,6 +304,7 @@ class Detail extends Component {
             <Review reviewNum={reviewNum} reviews={reviews} />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -34,7 +34,7 @@ class Login extends Component {
 
   handleLogin = () => {
     const { email, pw } = this.state;
-    fetch(`${API}/users/signin`, {
+    fetch("http://192.168.219.108:8001/users/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ class Login extends Component {
         console.log(res);
         if (res.token) {
           localStorage.setItem("token", res.token);
-          this.props.history.push("./signup");
+          this.props.history.push("./");
           alert("로그인 성공했습니다.");
         } else {
           alert("이메일 또는 비밀번호를 확인하세요.");

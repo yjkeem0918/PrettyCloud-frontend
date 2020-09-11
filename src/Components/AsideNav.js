@@ -48,7 +48,7 @@ class AsideNav extends Component {
   componentDidMount() {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`${API}/users/getUser`, {
+      fetch("http://192.168.219.108:8001/users/getUser", {
         method: "POST",
         headers: {
           authorization: token,
@@ -104,7 +104,9 @@ class AsideNav extends Component {
                   <div className="IconWrapper">
                     <div className="reservationList"></div>
                   </div>
-                  <span>예약 리스트</span>
+                  <Link to="/reservationlist">
+                    <span>예약 리스트</span>
+                  </Link>
                 </a>
               </li>
               <li>
