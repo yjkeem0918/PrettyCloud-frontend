@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../../../config";
 import SlideCard from "./SlideCard";
 import "./SliderPanel.scss";
 
@@ -8,7 +9,7 @@ export default class SliderPanel extends Component {
   };
 
   componentDidMount = () => {
-    fetch("http://18.223.188.215:8000/spaces/slider")
+    fetch(`${API}/spaces/slider`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({

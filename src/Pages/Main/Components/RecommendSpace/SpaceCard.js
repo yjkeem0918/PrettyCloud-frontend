@@ -1,15 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./SpaceCard.scss";
 
 class SpaceCard extends Component {
   render() {
     const intFee = Number(this.props.fee);
     const tagsLimit = this.props.tags.slice(0, 4);
+    const { spaceCardId } = this.props;
     return (
       <div className="SpaceCard">
         <li>
           <div className="imageContainer">
-            <img alt="previewImage" src={this.props.imgUrl} />
+            <Link to={`/detail/${spaceCardId}`}>
+              <img alt="previewImage" src={this.props.imgUrl} />
+            </Link>
           </div>
 
           <div className="infoContainer">

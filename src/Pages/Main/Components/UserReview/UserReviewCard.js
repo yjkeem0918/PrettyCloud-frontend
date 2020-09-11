@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./UserReviewCard.scss";
 
 export default class UserReviewCard extends Component {
   render() {
-    // const {tags} = this.props
+    const { spaceCardId } = this.props;
     const tagLimit = this.props.tags.slice(0, 4);
     return (
       <div className="UserReviewCard">
         <div className="reviewImg">
-          <img alt="reviewImg" src={this.props.imgUrl} />
+          <Link to={`/detail/${spaceCardId}`}>
+            <img className="img" alt="reviewImg" src={this.props.imgUrl} />
+          </Link>
         </div>
         <div className="reviewContents">
           <ul className="reviewTag">

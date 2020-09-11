@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../../../config";
 import SpaceCard from "./SpaceCard";
 import "./RecommendSpace.scss";
 
@@ -8,7 +9,7 @@ export default class RecommendSpace extends Component {
   };
 
   componentDidMount = () => {
-    fetch("http://18.223.188.215:8000/spaces/recommendation")
+    fetch(`${API}/spaces/recommendation`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -24,6 +25,7 @@ export default class RecommendSpace extends Component {
           return (
             <li className="spaceCard">
               <SpaceCard
+                spaceCardId={el.id}
                 imgUrl={el.imgUrl}
                 title={el.title}
                 address={el.address}

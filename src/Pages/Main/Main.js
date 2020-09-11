@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../config";
 import SlidePanel from "./Components/SliderPanel/SliderPanel";
 import RecommendSpace from "./Components/RecommendSpace/RecommendSpace";
 import UserReview from "./Components/UserReview/UserReview";
@@ -16,7 +17,7 @@ export default class Main extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://18.223.188.215:8000/spaces/categories")
+    fetch(`${API}/spaces/categories`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -39,10 +40,9 @@ export default class Main extends Component {
             <ul className="spaceList">
               {this.state.categories.map((el) => {
                 return (
-                  <li className="listContents">
-                    <Link to={`/searchresult?query=${el}`}></Link>
-                    {el}
-                  </li>
+                  <Link to={`/searchresult?query=${el}`}>
+                    <li className="listContents">{el}</li>
+                  </Link>
                 );
               })}
             </ul>

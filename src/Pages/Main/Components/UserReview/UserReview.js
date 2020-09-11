@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../../../config";
 import UserReviewCard from "./UserReviewCard";
 import "./UserReview.scss";
 
@@ -20,9 +21,7 @@ export default class UserReview extends Component {
 
   fetchUserReview = () => {
     const { offset } = this.state;
-    fetch(
-      `http://18.223.188.215:8000/spaces/reviews?offset=${offset}&limit=${LIMIT}`
-    )
+    fetch(`${API}/spaces/reviews?offset=${offset}&limit=${LIMIT}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -51,6 +50,7 @@ export default class UserReview extends Component {
           return (
             <li className="review">
               <UserReviewCard
+                spaceCardId={el.id}
                 imgUrl={el.imgUrl}
                 title={el.title}
                 tags={el.tags}
