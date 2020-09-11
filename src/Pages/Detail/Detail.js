@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AsideNav from "../../Components/AsideNav";
 import SpaceInfo from "./SpaceInfo";
 import DetailNav from "./DetailNav";
 import DetailList from "./DetailList";
@@ -15,7 +16,7 @@ class Detail extends Component {
     super();
 
     this.state = {
-      space_id: 0,
+      space_id: 1,
       header: "",
       subDescription: "",
       price: "",
@@ -44,11 +45,13 @@ class Detail extends Component {
 
   componentDidMount() {
     const { space_id } = this.state;
+    console.log(`${API}/spaces/detail/${space_id}`);
     fetch(`${API}/spaces/detail/${space_id}`)
       .then((res) => {
         return res.json();
       })
       .then((res) => {
+        console.log(res);
         this.setState({
           space_id: res.detail[0].id,
           header: res.detail[0].title,
@@ -158,6 +161,7 @@ class Detail extends Component {
 
     return (
       <div className="Detail">
+        <AsideNav />
         <div className="detailWrapper">
           <div className="pageHeaderBox">
             <h2 className="pageHeader">{header}</h2>

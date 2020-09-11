@@ -21,7 +21,7 @@ class DetailList extends Component {
           <li className="lists">
             <span className="listTitle">공간유형</span>
             <span className="data">
-              <span>{spaceType}</span>
+              <span>{spaceType.slice(0, 3).map((el) => `${el} `)}</span>
             </span>
           </li>
           <li className="lists">
