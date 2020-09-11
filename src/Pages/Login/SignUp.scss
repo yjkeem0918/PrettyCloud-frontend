@@ -1,8 +1,7 @@
 @import "../../Styles/common.scss";
 .SignUp {
   background-color: #f6f6f6;
-  height: 105vh;
-  padding-top: 120px;
+  padding: 78px 0;
   @mixin inputChecked() {
     width: 16px;
     height: 16px;
@@ -20,6 +19,7 @@
   }
   .signupContainer {
     h1 {
+      padding-top: 120px;
       font-size: 34px;
       font-weight: bold;
       text-align: center;

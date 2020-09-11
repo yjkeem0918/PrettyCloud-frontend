@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import API from "../../config";
+import API from "../../config";
 import "./Login.scss";
-import AsideNav from "../../Components/AsideNav";
 
 class Login extends Component {
   constructor() {
@@ -34,7 +33,7 @@ class Login extends Component {
 
   handleLogin = () => {
     const { email, pw } = this.state;
-    fetch("http://192.168.219.108:8001/users/signin", {
+    fetch(`${API}/users/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,9 +60,8 @@ class Login extends Component {
     const { email, pw, alertEmail } = this.state;
     return (
       <div className="Login">
-        <AsideNav />
         <main className="loginContainer">
-          <h1>로그인</h1>
+          <h1 className="loginTitle">로그인</h1>
           <div className="loginBox">
             <div className="socialLoginBox">
               <a href="#">네이버로 로그인</a>

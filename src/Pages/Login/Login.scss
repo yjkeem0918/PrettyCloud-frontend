@@ -2,9 +2,9 @@
 .Login {
   background-color: #f6f6f6;
   height: 100vh;
-  padding-top: 120px;
   .loginContainer {
-    h1 {
+    .loginTitle {
+      padding-top: 120px;
       font-size: 34px;
       font-weight: bold;
       text-align: center;

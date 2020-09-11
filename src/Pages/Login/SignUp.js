@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../config";
-import KaKaoLogin from "react-kakao-login";
 import "./SignUp.scss";
 
 class SignUp extends Component {
