@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Reservation from "./Reservation";
 import API from "../../config";
+import AsideNav from "../../Components/AsideNav";
 import "./ReservationList.scss";
 
 class ReservationList extends Component {
@@ -14,7 +15,7 @@ class ReservationList extends Component {
   componentDidMount = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`${API}/reservation/get`, {
+      fetch("http://192.168.219.108:8001/reservation/get", {
         method: "GET",
         headers: {
           authorization: token,
@@ -33,6 +34,7 @@ class ReservationList extends Component {
   render() {
     return (
       <div className="ReservationList">
+        <AsideNav />
         <h1>예약 내역 리스트</h1>
         <main className="cardContainer">
           <div className="list">

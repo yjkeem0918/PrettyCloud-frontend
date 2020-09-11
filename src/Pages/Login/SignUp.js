@@ -84,7 +84,7 @@ class SignUp extends Component {
 
   handleSignUp = () => {
     const { name, email, pw } = this.state;
-    fetch(`${API}/users/signup`, {
+    fetch("http://192.168.219.108:8001/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,7 +101,7 @@ class SignUp extends Component {
       .then((res) => {
         if (res.message === "SUCCESS") {
           alert("회원가입이 완료되었습니다.");
-          this.props.history.push("/");
+          this.props.history.push("/login");
         } else {
           alert("회원가입에 실패하였습니다.");
         }
