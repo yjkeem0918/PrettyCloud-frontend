@@ -7,6 +7,7 @@ import Tags from "./Tags";
 import Reservation from "./Reservation";
 import Refund from "./Refund";
 import Review from "./Review";
+import API from "../../config";
 import "./Detail.scss";
 
 class Detail extends Component {
@@ -42,7 +43,8 @@ class Detail extends Component {
   }
 
   componentDidMount() {
-    fetch("http://18.223.188.215:8000/spaces/detail/3")
+    const { space_id } = this.state;
+    fetch(`${API}/spaces/detail/${space_id}`)
       .then((res) => {
         return res.json();
       })
@@ -132,8 +134,6 @@ class Detail extends Component {
       });
   };
   render() {
-    // console.log(this.state.space_id);
-    // console.log(typeof this.state.selectDate);
     const {
       header,
       subDescription,
