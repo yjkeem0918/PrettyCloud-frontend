@@ -5,6 +5,7 @@ import SignUp from "./Pages/Login/SignUp";
 import Main from "./Pages/Main/Main";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import Detail from "./Pages/Detail/Detail";
+import ReservationList from "./Pages/ReservationList/ReservationList";
 
 class Routes extends React.Component {
   render() {
@@ -15,7 +16,8 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/searchresult" component={SearchResult} />
-          <Route exact path="/detail/:key" component={Detail} />
+          <Route exact path="/detail" component={Detail} />
+          <Route exact path="/reservationlist" component={ReservationList} />
         </Switch>
       </Router>
     );

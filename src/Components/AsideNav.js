@@ -32,10 +32,20 @@ class AsideNav extends Component {
     });
   };
 
+  handleBg = () => {
+    this.setState({
+      close: false,
+    });
+  };
+
   render() {
     return (
       <div className="AsideNav">
         <Nav open={this.openAside} />
+        <div
+          className={this.state.close ? "bg" : "no"}
+          onClick={this.handleBg}
+        ></div>
         <div className={this.state.close ? "showAside" : "hiddenAside"}>
           <aside>
             <div className="profileBox">
@@ -45,10 +55,8 @@ class AsideNav extends Component {
                   src="https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg"
                 />
               </a>
-              <Link to="/login">
-                <a href="#" className="profileName">
-                  로그인이 필요합니다.
-                </a>
+              <Link to="/login" className="profileName">
+                로그인이 필요합니다.
               </Link>
               <a href="#" className="navClose" onClick={this.closeAside}>
                 <div></div>

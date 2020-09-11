@@ -9,22 +9,19 @@ class Nav extends Component {
       queryString: "",
     };
   }
-
   handleText = (e) => {
     this.setState({
       queryString: e.target.value,
     });
   };
-
   render() {
     const { queryString } = this.state;
     const { open } = this.props;
-
     return (
       <NavContainer>
         <div>
-          <NavLogoBox>
-            <div></div>
+          <NavLogoBox to="/">
+            <div />
           </NavLogoBox>
           <SearchBox>
             <Search
@@ -51,6 +48,7 @@ class Nav extends Component {
     );
   }
 }
+export default withRouter(Nav);
 
 export default withRouter(Nav);
 
@@ -70,8 +68,7 @@ const NavContainer = styled.nav`
     align-items: center;
   }
 `;
-
-const NavLogoBox = styled.div`
+const NavLogoBox = styled(Link)`
   padding-left: 30px;
   div {
     display: inline-block;
@@ -99,7 +96,6 @@ const Search = styled.input.attrs((props) => ({
   border: none;
   border-bottom: 4px solid #ffd014;
 `;
-
 const SearchWrap = styled(Link)`
   position: absolute;
   top: 50%;
