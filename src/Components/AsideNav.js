@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
+import API from "../config";
 import "./AsideNav.scss";
 
 const LIST = [
@@ -47,7 +48,7 @@ class AsideNav extends Component {
   componentDidMount() {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://192.168.219.108:8001/users/getUser", {
+      fetch(`${API}/users/getUser`, {
         method: "POST",
         headers: {
           authorization: token,

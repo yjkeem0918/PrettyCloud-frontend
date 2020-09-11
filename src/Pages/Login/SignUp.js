@@ -198,7 +198,7 @@ class SignUp extends Component {
                   </div>
                 </div>
               </div>
-              <Link to="/">
+              <Link to="/login">
                 <button>회원가입</button>
               </Link>
             </section>
