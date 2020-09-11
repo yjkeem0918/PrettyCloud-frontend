@@ -13,7 +13,7 @@ export default class Main extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://18.223.188.215:8000/spaces/categories")
+    fetch("http://localhost:3000/Data/categories.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
