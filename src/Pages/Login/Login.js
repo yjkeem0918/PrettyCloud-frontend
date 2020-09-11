@@ -61,6 +61,7 @@ class Login extends Component {
     const { email, pw, alertEmail } = this.state;
     return (
       <div className="Login">
+        <AsideNav />
         <main className="loginContainer">
           <h1 className="loginTitle">로그인</h1>
           <div className="loginBox">
