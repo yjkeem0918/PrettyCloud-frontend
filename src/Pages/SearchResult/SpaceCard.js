@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 class SpaceCard extends Component {
   render() {
     const {
+      spaceCardId,
       img,
       paymentType,
       title,
@@ -14,10 +15,11 @@ class SpaceCard extends Component {
       review,
       like,
     } = this.props;
+
     return (
       <div className="SpaceCard">
         <div className="imageContainer">
-          <Link to={`/detail/${this.props.key}`}>
+          <Link to={`/detail/${spaceCardId}`}>
             <img alt="previewImage" className="spaceImg" src={img} />
           </Link>
 

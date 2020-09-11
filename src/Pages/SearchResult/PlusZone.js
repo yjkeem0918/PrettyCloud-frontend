@@ -11,7 +11,7 @@ class PlusZone extends Component {
         <div className="plusContainer">
           {plusData.map((el) => (
             <SpaceCard
-              key={el.id}
+              spaceCardId={el.id}
               title={el.title}
               fee={parseInt(el.fee).toLocaleString()}
               address={el.address}

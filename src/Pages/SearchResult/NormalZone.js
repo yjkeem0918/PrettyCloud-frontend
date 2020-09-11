@@ -11,7 +11,7 @@ class NormalZone extends Component {
           <div className="NormalZoneBox">
             {normalData.map((el) => (
               <SpaceCard
-                key={el.id}
+                spaceCardId={el.id}
                 title={el.title}
                 fee={parseInt(el.fee).toLocaleString()}
                 address={el.address}

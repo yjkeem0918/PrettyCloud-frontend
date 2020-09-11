@@ -1,0 +1,52 @@
+.SpaceInfo {
+  padding-top: 20px;
+  .introTextBox {
+    padding-top: 50px;
+    margin-bottom: 50px;
+    .introHeader {
+      position: relative;
+      padding-bottom: 16px;
+      margin: 70px 0 28px;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+    .introHeader::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      height: 4px;
+      width: 20px;
+      background-color: #ffd014;
+    }
+    .pIntro {
+      font-size: 16px;
+      line-height: 28px;
+      color: #656565;
+    }
+    .introOfficeHours {
+      margin-top: 35px;
+      .officeHours {
+        padding: 10px 0 8px 0px;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebeb;
+        .hours {
+          color: #656565;
+          line-height: 28px;
+          padding-left: 20px;
+        }
+        .wave {
+          color: #656565;
+        }
+        .closed {
+          color: #656565;
+          line-height: 28px;
+        }
+        .timee {
+          color: #656565;
+        }
+      }
+    }
+  }
+}

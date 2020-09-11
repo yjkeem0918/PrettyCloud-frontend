@@ -1,0 +1,80 @@
+.Review {
+  .reviewHeaderBox {
+    margin-bottom: 50px;
+    .reviewHeader {
+      display: flex;
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+      margin: 70px 0 28px;
+      color: #000;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 30px;
+      position: relative;
+    }
+    .reviewHeader::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      height: 4px;
+      width: 20px;
+      background-color: #ffd014;
+    }
+    .reviewsNumber {
+      color: #6d3afb;
+      margin-left: 5px;
+    }
+  }
+  .paging {
+    margin-top: 43px;
+    display: flex;
+    justify-content: center;
+    .prev1 {
+      background-size: 684px 663px;
+      background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+      background-position: -412px -451px;
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .prev2 {
+      background-size: 684px 663px;
+      background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+      background-position: -519px 0;
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .pageNum {
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      text-align: center;
+      padding-top: 16px;
+      color: #6d3afb;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .next1 {
+      background-size: 684px 663px;
+      background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+      background-position: -366px -451px;
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .next2 {
+      background-size: 684px 663px;
+      background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+      background-position: -519px -138px;
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}

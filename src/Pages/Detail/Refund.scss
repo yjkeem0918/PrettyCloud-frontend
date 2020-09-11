@@ -1,0 +1,46 @@
+.Refund {
+  padding-top: 70px;
+  .refundInfoBox {
+    border-top: 1px solid #f6f6f6;
+    margin-bottom: 50px;
+    .refundHeader {
+      position: relative;
+      padding-bottom: 16px;
+      margin: 70px 0 28px;
+      color: #000;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+    .refundHeader::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      height: 4px;
+      width: 20px;
+      background-color: #ffd014;
+    }
+    .noticeRefund {
+      padding-bottom: 20px;
+      line-height: 1.5;
+      .host {
+        color: #ff3a48;
+      }
+    }
+    ol {
+      .refundList {
+        padding: 8px 8px 8px 0;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebeb;
+        .day {
+          color: #656565;
+        }
+        .price {
+          line-height: 28px;
+          padding-left: 29px;
+        }
+      }
+    }
+  }
+}

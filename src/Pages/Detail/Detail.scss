@@ -1,0 +1,253 @@
+@import "../../Styles/common.scss";
+
+.Detail {
+  background-color: #f6f6f6;
+  margin-top: 78px;
+  .detailWrapper {
+    width: 1158px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    .pageHeaderBox {
+      .pageHeader {
+        font-size: 42px;
+        line-height: 43px;
+        font-weight: 600;
+      }
+      .subDescription {
+        margin-top: 17px;
+        margin-bottom: 22px;
+        font-size: 22px;
+        line-height: 22px;
+        color: #656565;
+        font-weight: lighter;
+      }
+    }
+    .detailForms {
+      margin-top: 39px;
+      position: relative;
+      padding-right: 395px;
+      .rightDetailSpaceBox {
+        padding: 0 15px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 368px;
+        .rightDetailHeaderBox {
+          display: flex;
+          padding: 2px 0 15px;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 3px solid #704de4;
+          .rightDetailHeader {
+            font-size: 16px;
+            font-weight: 600;
+          }
+          .iconContainer {
+            display: flex;
+            justify-content: space-between;
+            width: 65px;
+            .share {
+              width: 22px;
+              height: 22px;
+              cursor: pointer;
+            }
+            .heart {
+              width: 22px;
+              height: 22px;
+              cursor: pointer;
+            }
+          }
+        }
+        .spaceBox {
+          .respondInfos {
+            padding: 19px 20px 17px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 16px;
+            .pRespond {
+              line-height: 25px;
+            }
+          }
+          .detailList {
+            .shopInfoBox {
+              padding: 22px 20px 21px 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #fff;
+              .shopInfo {
+                .shopName {
+                  font-size: 16px;
+                  font-weight: 700;
+                  padding-left: 10px;
+                  line-height: 21px;
+                }
+              }
+              .priceTime {
+                display: flex;
+                padding-top: 2px;
+                align-items: center;
+                .price {
+                  font-size: 18px;
+                  color: #6d3bff;
+                  font-weight: 600;
+                }
+                .time {
+                  font-size: 12px;
+                  display: inline-block;
+                  padding: 1px 0 0 2px;
+                  font-weight: lighter;
+                }
+              }
+            }
+            .spaceInfoWrapper {
+              padding: 15px 20px 0px 20px;
+              border: 1px solid #704de4;
+              background-color: #fff;
+              font-size: 14px;
+              width: 338px;
+
+              .meetSpaceInfo {
+                width: 296px;
+                .meetSpaceDesc {
+                  margin-top: 10px;
+                  padding: 20px 0;
+                  line-height: 1.4;
+                }
+              }
+              .selectReservation {
+                margin-top: 30px;
+                height: 39px;
+                border-bottom: 3px solid #704de4;
+                .select {
+                  margin-top: 17px;
+                  font-size: 17px;
+                  font-weight: 700;
+                  padding-left: 8px;
+                  line-height: 21px;
+                }
+              }
+              .selectDate {
+                margin-top: 20px;
+                position: relative;
+                display: inline-block;
+                .choose {
+                  margin-bottom: 20px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  width: 100%;
+                  text-align: center;
+                  border: 2px solid #f6f6f6;
+                  padding: 3px;
+                  font-weight: 500;
+                  font-size: 15px;
+                }
+                .precautions {
+                  font-size: 14px;
+                  line-height: 18px;
+                  color: #ff3a48;
+                }
+              }
+              .selectTime {
+                margin-top: 30px;
+                height: 39px;
+                border-bottom: 3px solid #704de4;
+                .select {
+                  margin-top: 17px;
+                  font-size: 17px;
+                  font-weight: 700;
+                  padding-left: 8px;
+                  line-height: 21px;
+                }
+              }
+              .chooseTime {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                .timeInput {
+                  margin-top: 20px;
+                  width: 100%;
+                  text-align: center;
+                  border: 2px solid #f6f6f6;
+                  padding: 3px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  letter-spacing: 0.5px;
+                  height: 30px;
+                }
+                .wave {
+                  margin-top: 17px;
+                  margin-left: 8px;
+                  margin-right: 8px;
+                }
+              }
+              .numBox {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+                border: 1px solid #e0e0e0;
+                margin: 30px 0;
+                .btnMinus {
+                  display: inline-block;
+                  background-size: 684px 663px;
+                  background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+                  background-position: -112px -451px;
+                  width: 48px;
+                  height: 48px;
+                  border-right: 1px solid #e0e0e0;
+                  cursor: pointer;
+                }
+                .numberSet {
+                  outline: none;
+                  border: none;
+                  text-align: center;
+                  font-size: 15px;
+                }
+                .btnPlus {
+                  display: inline-block;
+                  background-size: 684px 663px;
+                  background-image: url(https://www.spacecloud.kr/_nuxt/img/08341ee.png);
+                  background-position: -216px -451px;
+                  width: 48px;
+                  height: 48px;
+                  border-left: 1px solid #e0e0e0;
+                  cursor: pointer;
+                }
+              }
+            }
+            .reservationButtonBox {
+              background-color: #704de4;
+              height: 60px;
+              text-align: center;
+              cursor: pointer;
+              .reservationButton {
+                height: 60px;
+                line-height: 60px;
+                width: 100%;
+                color: #ffd014;
+                font-size: 18px;
+                font-weight: 350;
+                letter-spacing: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .photoWrapper {
+      width: 773px;
+      .mainPhoto {
+        height: 450px;
+      }
+      .textBox {
+        border-top: 1px solid #f6f6f6;
+        margin-bottom: 50px;
+        .textBoxHeader {
+          padding: 50px 0 0 0;
+          font-size: 48px;
+          line-height: 60px;
+          font-weight: lighter;
+        }
+      }
+    }
+  }
+}
