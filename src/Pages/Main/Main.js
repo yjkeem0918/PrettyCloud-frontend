@@ -4,6 +4,7 @@ import RecommendSpace from "./Components/RecommendSpace/RecommendSpace";
 import UserReview from "./Components/UserReview/UserReview";
 import AsideNav from "../../Components/AsideNav";
 import Footer from "../../Components/Footer";
+import { Link } from "react-router-dom";
 import "./Main.scss";
 
 export default class Main extends Component {
@@ -15,7 +16,7 @@ export default class Main extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/Data/categories.json")
+    fetch("http://18.223.188.215:8000/spaces/categories")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -37,7 +38,12 @@ export default class Main extends Component {
           <div className="spaceListBox">
             <ul className="spaceList">
               {this.state.categories.map((el) => {
-                return <li className="listContents">{el}</li>;
+                return (
+                  <li className="listContents">
+                    <Link to={`/searchresult?query=${el}`}></Link>
+                    {el}
+                  </li>
+                );
               })}
             </ul>
           </div>
