@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Reservation from "./Reservation";
+import API from "../../config";
 import "./ReservationList.scss";
 
 class ReservationList extends Component {
@@ -13,7 +14,7 @@ class ReservationList extends Component {
   componentDidMount = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://192.168.219.108:8001/reservation/get", {
+      fetch(`${API}/reservation/get`, {
         method: "GET",
         headers: {
           authorization: token,
@@ -30,7 +31,6 @@ class ReservationList extends Component {
   };
 
   render() {
-    console.log(this.state.reservation);
     return (
       <div className="ReservationList">
         <h1>예약 내역 리스트</h1>
