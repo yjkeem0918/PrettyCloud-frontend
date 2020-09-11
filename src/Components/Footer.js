@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import styled from "styled-components";
 
 const INFO = [
@@ -62,7 +63,7 @@ class Footer extends Component {
   }
 }
 const FooterContainer = styled.footer`
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 54px 0 50px;

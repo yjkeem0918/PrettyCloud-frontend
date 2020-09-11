@@ -77,10 +77,12 @@ const NavLogoBox = styled(Link)`
     background-size: 684px 663px;
   }
 `;
+
 const SearchBox = styled.main`
   position: relative;
   margin-left: 115px;
 `;
+
 const Search = styled.input.attrs((props) => ({
   type: "text",
 }))`
@@ -105,6 +107,7 @@ const SearchWrap = styled(Link)`
     height: 30px;
   }
 `;
+
 const NavLinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -117,6 +120,7 @@ const NavLinkContainer = styled.div`
     cursor: pointer;
   }
 `;
+
 const NavLinkIcon = styled.a`
   display: flex;
   justify-content: center;

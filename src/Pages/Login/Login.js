@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../config";
 import "./Login.scss";
+import AsideNav from "../../Components/AsideNav";
 
 class Login extends Component {
   constructor() {
