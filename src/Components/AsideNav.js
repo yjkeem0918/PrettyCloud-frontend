@@ -17,7 +17,7 @@ class AsideNav extends Component {
     this.state = {
       close: false,
       isLogin: false,
-      profileImg: "",
+      userName: "",
     };
   }
 
@@ -40,6 +40,10 @@ class AsideNav extends Component {
     });
   };
 
+  logOut = () => {
+    localStorage.removeItem("token");
+  };
+
   componentDidMount() {
     const token = localStorage.getItem("token");
     if (token) {
@@ -53,12 +57,12 @@ class AsideNav extends Component {
         .then((res) => res.json())
         .then((res) => {
           console.log(res);
-          // if (token) {
-          // this.setState({
-          //   isLogin: true,
-          //   profileImg: res.user_profile,
-          // });
-          // }
+          if (token) {
+            this.setState({
+              isLogin: true,
+              userName: res.userName,
+            });
+          }
         });
     }
   }
@@ -80,11 +84,15 @@ class AsideNav extends Component {
                   src="https://www.spacecloud.kr/_nuxt/img/a430bdb.jpg"
                 />
               </a>
-              (
-              <Link to="/login" className="profileName">
-                로그인이 필요합니다.
-              </Link>
-              )
+              {this.state.isLogin ? (
+                <Link to="/" className="profileName">
+                  "{this.state.userName}"님 안녕하세요
+                </Link>
+              ) : (
+                <Link to="/login" className="profileName">
+                  로그인이 필요합니다.
+                </Link>
+              )}
               <a href="#" className="navClose" onClick={this.closeAside}>
                 <div></div>
               </a>
@@ -129,9 +137,15 @@ class AsideNav extends Component {
               })}
             </ul>
             <div className="serviceBox">
-              <Link to="/login">
-                <a href="#">로그인</a>
-              </Link>
+              {this.state.isLogin ? (
+                <Link to="/" onClick={this.logOut}>
+                  <a href="#">로그아웃</a>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <a href="#">로그인</a>
+                </Link>
+              )}
               <div>Powered by © NSPACE Corp.</div>
             </div>
             <a href="#" className="bottomButton">
