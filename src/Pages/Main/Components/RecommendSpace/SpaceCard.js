@@ -4,6 +4,7 @@ import "./SpaceCard.scss";
 class SpaceCard extends Component {
   render() {
     const intFee = Number(this.props.fee);
+    const tagsLimit = this.props.tags.slice(0, 4);
     return (
       <div className="SpaceCard">
         <li>
@@ -21,7 +22,7 @@ class SpaceCard extends Component {
                 <div className="bar" />
               </div>
               <div className="tagWrapper">
-                {this.props.tags.map((el) => {
+                {tagsLimit.map((el) => {
                   return <span>#{el}</span>;
                 })}
               </div>
