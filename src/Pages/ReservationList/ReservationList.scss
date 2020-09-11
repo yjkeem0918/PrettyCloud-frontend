@@ -1,0 +1,23 @@
+@import "../../Styles/common.scss";
+
+.ReservationList {
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f6f6;
+  h1 {
+    margin: 0 auto;
+    padding-top: 120px;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; 
+    .list {
+      width: 800px;
+      margin-top: 70px;
+    }
+  }
+}

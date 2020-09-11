@@ -1,6 +1,7 @@
 .SpaceCard {
-  width: 377px;
-  height: 339.25px;
+  width: 405px;
+  height: 375px;
+  padding: 13px;
   position: relative;
 
   .imageContainer {
@@ -113,10 +114,15 @@
             height: 12px;
           }
 
-          .maxUser {
+          .max {
             font-size: 12px;
             color: #656565;
             padding-left: 3px;
+          }
+
+          .user {
+            font-size: 12px;
+            color: #656565;
           }
         }
 
