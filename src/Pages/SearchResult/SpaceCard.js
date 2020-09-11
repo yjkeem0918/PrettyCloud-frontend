@@ -18,14 +18,7 @@ class SpaceCard extends Component {
       <div className="SpaceCard">
         <div className="imageContainer">
           <Link to={`/detail/${this.props.key}`}>
-            <img
-              alt="previewImage"
-              className="spaceImg"
-              src={img}
-              // onClick={() => {
-              //   this.props.history.push(`/detail/${this.props.id}`);
-              // }}
-            />
+            <img alt="previewImage" className="spaceImg" src={img} />
           </Link>
 
           <div
