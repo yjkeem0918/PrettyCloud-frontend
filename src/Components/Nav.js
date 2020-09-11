@@ -50,8 +50,6 @@ class Nav extends Component {
 }
 export default withRouter(Nav);
 
-export default withRouter(Nav);
-
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
