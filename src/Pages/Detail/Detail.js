@@ -45,20 +45,20 @@ class Detail extends Component {
 
   componentDidMount() {
     const { space_id } = this.state;
-    console.log(`${API}/spaces/detail/${space_id}`);
-    fetch(`${API}/spaces/detail/${space_id}`)
+    //console.log(this.props.match.params);
+    //   console.dir(this.props.location.search);
+    fetch(`${API}/spaces/detail/${this.props.match.params.id}`)
       .then((res) => {
         return res.json();
       })
       .then((res) => {
-        console.log(res);
         this.setState({
           space_id: res.detail[0].id,
           header: res.detail[0].title,
           subDescription: res.detail[0].subTitle,
           tag: res.detail[0].tags,
-          imgUrl: res.detail[0].imgUrl[0],
-          imgUrl1: res.detail[0].imgUrl[1],
+          imgUrl: res.detail[0].imgUrl[1],
+          imgUrl1: res.detail[0].imgUrl[0],
           spaceIntro: res.detail[0].description,
           opening_hour: res.detail[0].opening_hour,
           closing_hour: res.detail[0].closing_hour,
@@ -132,9 +132,7 @@ class Detail extends Component {
       }),
     })
       .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      });
+      .then((response) => {});
   };
   render() {
     const {
@@ -175,12 +173,12 @@ class Detail extends Component {
                 <div className="iconContainer">
                   <img
                     className="share"
-                    src="images/share.png"
+                    src="/images/share.png"
                     alt="shareicon"
                   />
                   <img
                     className="heart"
-                    src="images/heart.png"
+                    src="/images/heart.png"
                     alt="hearticon"
                   />
                 </div>
