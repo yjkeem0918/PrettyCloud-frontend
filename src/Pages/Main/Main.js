@@ -50,7 +50,7 @@ export default class Main extends Component {
           </div>
         </section>
 
-        <section className="userReview">
+        <section className="mainUserReview">
           <p className="mainSubTitle">이용자 리뷰</p>
           <p className="titleContent">생생한 후기를 만나보세요</p>
           <UserReview />

@@ -3,6 +3,8 @@ import "./UserReviewCard.scss";
 
 export default class UserReviewCard extends Component {
   render() {
+    // const {tags} = this.props
+    const tagLimit = this.props.tags.slice(0, 4);
     return (
       <div className="UserReviewCard">
         <div className="reviewImg">
@@ -10,7 +12,7 @@ export default class UserReviewCard extends Component {
         </div>
         <div className="reviewContents">
           <ul className="reviewTag">
-            {this.props.tags.map((el) => {
+            {tagLimit.map((el) => {
               return <li className="tags">{el}</li>;
             })}
           </ul>
