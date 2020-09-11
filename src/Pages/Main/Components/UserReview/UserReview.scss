@@ -1,6 +1,10 @@
 .UserReview {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  width: 1158px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+
   .review {
+    cursor: pointer;
   }
 }

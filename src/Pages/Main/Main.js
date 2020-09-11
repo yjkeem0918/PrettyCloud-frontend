@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SlidePanel from "./Components/SliderPanel/SliderPanel";
 import RecommendSpace from "./Components/RecommendSpace/RecommendSpace";
 import UserReview from "./Components/UserReview/UserReview";
+import AsideNav from "../../Components/AsideNav";
+import Footer from "../../Components/Footer";
 import "./Main.scss";
 
 export default class Main extends Component {
@@ -25,6 +27,7 @@ export default class Main extends Component {
   render() {
     return (
       <div className="Main">
+        <AsideNav />
         <section className="mainSlider">
           <SlidePanel />
         </section>
@@ -52,6 +55,8 @@ export default class Main extends Component {
           <p className="titleContent">생생한 후기를 만나보세요</p>
           <UserReview />
         </section>
+
+        <Footer />
       </div>
     );
   }

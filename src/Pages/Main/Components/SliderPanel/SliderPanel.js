@@ -8,7 +8,7 @@ export default class SliderPanel extends Component {
   };
 
   componentDidMount = () => {
-    fetch("http://18.223.188.215:8000/spaces/slider")
+    fetch("http://localhost:3000/Data/mainSlider.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({

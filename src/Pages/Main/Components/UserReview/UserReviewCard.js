@@ -15,7 +15,7 @@ export default class UserReviewCard extends Component {
             })}
           </ul>
           <p className="reviewTitle">{this.props.title}</p>
-          <p className="contentPrice">{this.props.fee}</p>
+          <p className="contentPrice">{this.props.fee}&nbsp;원/시간</p>
           <p className="contents">{this.props.review}</p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UserReviewCard from "./UserReviewCard";
 import "./UserReview.scss";
 
-const LIMIT = 3;
+const LIMIT = 6;
 export default class UserReview extends Component {
   constructor() {
     super();

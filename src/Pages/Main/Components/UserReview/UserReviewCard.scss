@@ -1,6 +1,11 @@
 .UserReviewCard {
+  font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
+    Helvetica, Apple SD Gothic Neo, Sans-serif !important;
+  text-align: left;
+  padding: 13px;
+
   .reviewImg {
-    width: 355px;
+    width: 360px;
     height: 235px;
 
     img {
@@ -9,9 +14,13 @@
     }
   }
   .reviewContents {
+    width: 360px;
     padding: 20px;
+    border: 1px solid #ebebeb;
+
     .reviewTag {
       display: flex;
+
       .tags {
         line-height: 22px;
         font-size: 12px;
@@ -24,8 +33,20 @@
     }
     .reviewTitle {
       font-size: 21px;
+      line-height: 30px;
       padding-top: 6px;
       padding-bottom: 5px;
+    }
+    .contentPrice {
+      font-size: 14px;
+      color: #656565;
+    }
+    .contents {
+      font-size: 14px;
+      line-height: 24px;
+      padding-top: 14px;
+      margin-top: 13px;
+      border-top: 1px solid #eee;
     }
   }
 }
