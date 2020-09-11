@@ -3,6 +3,7 @@ import "./SpaceCard.scss";
 
 class SpaceCard extends Component {
   render() {
+    const intFee = Number(this.props.fee);
     return (
       <div className="SpaceCard">
         <li>
@@ -28,7 +29,7 @@ class SpaceCard extends Component {
 
             <div className="priceNumberBox">
               <div className="priceWrapper">
-                <span className="price">{this.props.fee}</span>
+                <span className="price">{intFee}</span>
                 <span className="unit">원/시간</span>
               </div>
               <div className="numberWrapper">
