@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import API from "../../config";
 import AsideNav from "../../Components/AsideNav";
 import ResultFrame from "./ResultFrame";
 import PremiumZone from "./PremiumZone";
 import PlusZone from "./PlusZone";
 import NormalZone from "./NormalZone";
-
+import Footer from "../../Components/Footer";
 import "./SearchResult.scss";
 
 const LIMIT = 6;
@@ -27,7 +28,7 @@ class SearchResult extends Component {
     window.addEventListener("scroll", this.getData);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.location.search !== this.props.location.search) {
       this.setState(
         {
@@ -40,30 +41,25 @@ class SearchResult extends Component {
 
   getSearchData = () => {
     const { queryString, offset } = this.state;
-    console.log(
-      "이거>>>>>>>>>>>>>>>",
-      `http://192.168.219.106:8001/spaces/plus?search=${queryString}`
-    );
-    fetch(`http://192.168.219.106:8001/spaces/premium?search=${queryString}`)
+
+    fetch(`${API}/spaces/premium?search=${queryString}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           premium: res.premiumClass,
         });
-        console.log("프리미엄존>>>>", this.state.premium);
       });
 
-    fetch(`http://192.168.219.106:8001/spaces/plus?search=${queryString}`)
+    fetch(`${API}/spaces/plus?search=${queryString}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           plus: res.plusClass,
         });
-        console.log("플러스존>>>>>>", this.state.plus);
       });
 
     fetch(
-      `http://192.168.219.106:8001/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
+      `${API}/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -71,7 +67,6 @@ class SearchResult extends Component {
           normal: res.normalClass,
           offset: this.state.offset + LIMIT,
         });
-        console.log("노멀존>>>>>", this.state.normal);
       });
   };
 
@@ -83,7 +78,7 @@ class SearchResult extends Component {
 
     if (scrollTop + clientHeight >= scrollHeight) {
       fetch(
-        `http://192.168.219.106:8001/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
+        `${API}/spaces/normal?search=${queryString}&offset=${offset}&limit=${LIMIT}`
       )
         .then((res) => res.json())
         .then((res) => {
@@ -104,6 +99,7 @@ class SearchResult extends Component {
         <PremiumZone premiumData={premium} />
         <PlusZone plusData={plus} />
         <NormalZone normalData={normal} />
+        <Footer />
       </div>
     );
   }
